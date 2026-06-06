@@ -8,7 +8,7 @@ import Footer from "@/components/sections/footer";
 export const metadata = genMeta({
   title: "Blog — AI Agents & Automatisering voor Bedrijven",
   description:
-    "Praktische artikelen over AI agents, automatisering, RAG-systemen en WhatsApp bots voor het Nederlandse MKB. Concrete adviezen, eerlijke prijzen en bewezen strategieën van Virelio.",
+    "Praktische artikelen over AI agents, automatisering, RAG-systemen en WhatsApp bots voor het Nederlandse MKB. Concrete adviezen, eerlijke prijzen en bewezen strategieën van Impulso Co.",
   keywords:
     "AI blog Nederland, AI agents artikelen, automatisering MKB blog, RAG systeem gids, WhatsApp AI bedrijven, klantenservice automatisering gids",
   pathname: "/blog",

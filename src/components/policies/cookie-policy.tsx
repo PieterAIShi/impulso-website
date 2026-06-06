@@ -32,7 +32,7 @@ export default function CookiePolicy() {
             Cookies can be "persistent" or "session" cookies. Persistent cookies remain on your personal computer or mobile device when you go offline, while session cookies are deleted as soon as you close your web browser.
           </p>
 
-          <h2>How Virelio Uses Cookies</h2>
+          <h2>How Impulso Co. Uses Cookies</h2>
           <p>
             When you use and access the Service, we may place a number of cookie files in your web browser. We use cookies for the following purposes:
           </p>

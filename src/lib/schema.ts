@@ -89,7 +89,7 @@ export const servicesSchema = () => {
           "Custom AI agent teams built for your business — handling tasks autonomously, collaborating with each other, and integrating with your existing tools.",
         provider: {
           "@type": "Organization",
-          name: "Virelio",
+          name: "Impulso Co.",
           url: siteConfig.url,
         },
       },
@@ -100,7 +100,7 @@ export const servicesSchema = () => {
           "AI agents that qualify leads, follow up prospects, and manage your sales pipeline 24/7 — so your team closes more deals with less effort.",
         provider: {
           "@type": "Organization",
-          name: "Virelio",
+          name: "Impulso Co.",
           url: siteConfig.url,
         },
       },
@@ -111,7 +111,7 @@ export const servicesSchema = () => {
           "AI agents that handle customer inquiries, resolve common issues, and escalate edge cases — delivering instant, consistent support around the clock.",
         provider: {
           "@type": "Organization",
-          name: "Virelio",
+          name: "Impulso Co.",
           url: siteConfig.url,
         },
       },
@@ -122,7 +122,7 @@ export const servicesSchema = () => {
           "AI-powered knowledge management agents that capture, organise and surface institutional knowledge — making information instantly accessible across your team.",
         provider: {
           "@type": "Organization",
-          name: "Virelio",
+          name: "Impulso Co.",
           url: siteConfig.url,
         },
       },
@@ -133,7 +133,7 @@ export const servicesSchema = () => {
           "AI agents that automate repetitive back-office processes — from data entry and reporting to scheduling and workflow coordination.",
         provider: {
           "@type": "Organization",
-          name: "Virelio",
+          name: "Impulso Co.",
           url: siteConfig.url,
         },
       },
@@ -159,7 +159,7 @@ export function videoSchema() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Virelio",
+      "name": "Impulso Co.",
       "logo": {
         "@type": "ImageObject",
         "url": `${siteConfig.url}/logo.png`,
@@ -265,7 +265,7 @@ export function blogPostSchema({
     },
     publisher: {
       "@type": "Organization",
-      name: "Virelio",
+      name: "Impulso Co.",
       logo: {
         "@type": "ImageObject",
         url: "https://virelio.nl/logo.png",
@@ -288,7 +288,7 @@ export function productSchema({
   priceCurrency = "EUR",
   availability = "InStock",
   sku,
-  brand = "Virelio",
+  brand = "Impulso Co.",
   reviewCount,
   reviewRating,
 }: ProductProps) {
@@ -383,12 +383,12 @@ export function workshopSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "EducationalEvent",
-    name: "Virelio AI Agent Workshop",
+    name: "Impulso Co. AI Agent Workshop",
     description: "Expert-led workshops on building AI agents, automation workflows, and integrating AI into business processes. Hands-on experience with real use cases.",
     url: `${siteConfig.url}${siteConfig.sections.workshop}`,
     organizer: {
       "@type": "Organization",
-      name: "Virelio",
+      name: "Impulso Co.",
       url: siteConfig.url,
     },
     location: {
@@ -433,7 +433,7 @@ export function certificationsSchema() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Team Certifications",
-    description: "Professional AI and cloud certifications held by the Virelio team",
+    description: "Professional AI and cloud certifications held by the Impulso Co. team",
     numberOfItems: 19,
     itemListElement: [
       { "@type": "ListItem", position: 1, item: { "@type": "EducationalOccupationalCredential", name: "Model Context Protocol: Advanced Topics", credentialCategory: "AI Agent Development", recognizedBy: { "@type": "Organization", name: "Anthropic" } } },
@@ -470,7 +470,7 @@ export function voiceAIServiceSchema() {
     provider: {
       "@type": "Organization",
       "@id": `${siteConfig.url}#organization`,
-      name: "Virelio",
+      name: "Impulso Co.",
       url: siteConfig.url,
       logo: `${siteConfig.url}/og-image.png`,
       address: {

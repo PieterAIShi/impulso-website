@@ -161,7 +161,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div>
               <p className="font-bold text-foreground text-base sm:text-lg">{post.author}</p>
               <p className="mt-1 sm:mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                Virelio is een AI agent development bureau in Amsterdam. We
+                Impulso Co. is een AI agent development bureau in Amsterdam. We
                 bouwen maatwerk AI-oplossingen voor het Nederlandse MKB en
                 enterprise — live in 2 weken.
               </p>
@@ -169,7 +169,7 @@ export default async function BlogPostPage({ params }: Props) {
                 href="/"
                 className="mt-2 sm:mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
               >
-                Meer over Virelio
+                Meer over Impulso Co.
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>

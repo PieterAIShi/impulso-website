@@ -5,24 +5,24 @@ import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
 
 /**
- * Real-world example using actual Virelio project data
+ * Real-world example using actual Impulso Co. project data
  * Shows how to implement SEO for a one-page site with anchor sections using SEOHead component
  */
 export default function ServicesExample() {
-  // Real product schema for one of Virelio's services
+  // Real product schema for one of Impulso Co.'s services
   const aiSolutionSchema = productSchema({
-    name: "AI Solutions | Virelio",
+    name: "AI Solutions | Impulso Co.",
     description: "Custom AI solutions tailored to help businesses automate processes and gain insights from their data.",
     image: "https://virelio.nl/images/projects/ai-solutions.jpg",
     url: "https://virelio.nl/#projects",
   });
 
-  // Real FAQ data about Virelio's services
+  // Real FAQ data about Impulso Co.'s services
   const servicesFaqSchema = faqSchema({
     items: [
       {
-        question: "What services does Virelio offer?",
-        answer: "Virelio specializes in AI solutions, SaaS development, KYC integrations, and e-commerce automation to help businesses thrive in the digital age."
+        question: "What services does Impulso Co. offer?",
+        answer: "Impulso Co. specializes in AI solutions, SaaS development, KYC integrations, and e-commerce automation to help businesses thrive in the digital age."
       },
       {
         question: "How can your AI solutions benefit my business?",
@@ -35,8 +35,8 @@ export default function ServicesExample() {
     <>
       <SEOHead
         title="Projects"
-        description="Explore Virelio's AI solutions designed to transform your business with data-driven insights and automation."
-        keywords="AI solutions, machine learning, data analysis, automation, Virelio projects, business intelligence"
+        description="Explore Impulso Co.'s AI solutions designed to transform your business with data-driven insights and automation."
+        keywords="AI solutions, machine learning, data analysis, automation, Impulso Co. projects, business intelligence"
         canonicalPath="/#projects"
         ogType="website"
         structuredData={[aiSolutionSchema, servicesFaqSchema]}
@@ -63,8 +63,8 @@ export default function ServicesExample() {
           <h2 className="text-xl font-semibold mb-2">SEO Implementation:</h2>
           <code className="block whitespace-pre-wrap">
             {`
-title: "Projects | Virelio"
-description: "Explore Virelio's AI solutions designed to transform your business with data-driven insights and automation."
+title: "Projects | Impulso Co."
+description: "Explore Impulso Co.'s AI solutions designed to transform your business with data-driven insights and automation."
 canonical: "https://virelio.nl/#projects"
 structuredData: Product Schema + FAQ Schema
             `}

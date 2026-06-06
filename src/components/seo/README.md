@@ -1,6 +1,6 @@
 # SEO Components
 
-This directory contains reusable components for search engine optimization (SEO) in the Virelio application.
+This directory contains reusable components for search engine optimization (SEO) in the Impulso Co. application.
 
 ## Components
 

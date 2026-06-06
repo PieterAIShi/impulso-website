@@ -1,22 +1,22 @@
 export const siteConfig = {
-  name: "Virelio",
+  name: "Impulso Co.",
   description: "AI agent development company in Amsterdam. We build custom AI agents for businesses — from klantenservice to sales automation. Live in 2 weeks.",
   url: "https://virelio.nl",
   metadataBase: "https://virelio.nl",
   logoUrl: "/logo.svg",
   ogImage: "/og-image.png",
-  twitterHandle: "@Virelio",
+  twitterHandle: "@impulsoco",
   locale: "nl",
   authors: [
     {
-      name: "Virelio Team",
+      name: "Impulso Co. Team",
       url: "https://virelio.nl",
     },
   ],
   socials: {
-    twitter: "https://twitter.com/Virelio",
-    github: "https://github.com/Virelio",
-    linkedin: "https://linkedin.com/company/Virelio",
+    twitter: "https://twitter.com/impulsoco",
+    github: "https://github.com/impulsoco",
+    linkedin: "https://linkedin.com/company/impulsoco",
   },
   contact: {
     email: "info@virelio.nl",
@@ -48,7 +48,7 @@ export const siteConfig = {
     "AI spraakassistent zakelijk",
     "lead kwalificatie AI",
     "AI agent development company",
-    "Virelio",
+    "Impulso Co.",
     "Amsterdam",
     "Nederland",
   ],

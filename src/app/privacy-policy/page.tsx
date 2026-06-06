@@ -5,8 +5,8 @@ import Footer from "@/components/sections/footer";
 
 export const metadata: Metadata = generateMetadata({
   title: "Privacy Policy",
-  description: "Learn about how Virelio collects, uses, and protects your personal information.",
-  keywords: "privacy policy, data protection, personal information, GDPR, Virelio",
+  description: "Learn about how Impulso Co. collects, uses, and protects your personal information.",
+  keywords: "privacy policy, data protection, personal information, GDPR, Impulso Co.",
   pathname: "/privacy-policy",
 });
 
@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
         <div className="prose dark:prose-invert max-w-none">
           <h2>Introduction</h2>
           <p>
-            At Virelio, we respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
+            At Impulso Co., we respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
           </p>
 
           <h2>The Data We Collect About You</h2>

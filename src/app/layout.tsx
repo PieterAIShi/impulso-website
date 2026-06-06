@@ -43,16 +43,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Virelio | Digitale Medewerkers & AI Agents voor bedrijven",
-    template: "%s | Virelio"
+    default: "Impulso Co. | Digitale Medewerkers & AI Agents voor bedrijven",
+    template: "%s | Impulso Co."
   },
   description:
-    "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
+    "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
   keywords:
-    "Virelio, AI agents companies Amsterdam, AI agent company Amsterdam 2026, best AI agents Amsterdam, AI agents op maat, custom AI agents, AI automatisering bedrijven, digitale medewerkers, AI bureau Amsterdam, klantenservice AI agent, klantenservice automatiseren, sales automatisering, lead kwalificatie AI, AI agent bouwen, RAG development, retrieval augmented generation, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, AI spraakassistent, voice agent, AI telefoon agent, kennisbank AI, RAG systeem bouwen, facturatie automatiseren, contract review AI, on-premise AI, AI oplossingen MKB, bedrijfsprocessen automatiseren, AI integratie bestaande systemen, AI agent development company, custom agents voor klanten, AI onboarding agent, compliance agent, data analyse AI, Nederland, Amsterdam",
-  authors: [{ name: "Virelio Team" }],
-  creator: "Virelio",
-  publisher: "Virelio",
+    "Impulso Co., AI agents companies Amsterdam, AI agent company Amsterdam 2026, best AI agents Amsterdam, AI agents op maat, custom AI agents, AI automatisering bedrijven, digitale medewerkers, AI bureau Amsterdam, klantenservice AI agent, klantenservice automatiseren, sales automatisering, lead kwalificatie AI, AI agent bouwen, RAG development, retrieval augmented generation, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, AI spraakassistent, voice agent, AI telefoon agent, kennisbank AI, RAG systeem bouwen, facturatie automatiseren, contract review AI, on-premise AI, AI oplossingen MKB, bedrijfsprocessen automatiseren, AI integratie bestaande systemen, AI agent development company, custom agents voor klanten, AI onboarding agent, compliance agent, data analyse AI, Nederland, Amsterdam",
+  authors: [{ name: "Impulso Co. Team" }],
+  creator: "Impulso Co.",
+  publisher: "Impulso Co.",
   formatDetection: {
     email: false,
     address: false,
@@ -74,25 +74,25 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     alternateLocale: ["en_US"],
     url: siteConfig.url,
-    siteName: "Virelio",
-    title: "Virelio | Digitale Medewerkers & AI Agents voor bedrijven",
+    siteName: "Impulso Co.",
+    title: "Impulso Co. | Digitale Medewerkers & AI Agents voor bedrijven",
     description:
-      "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken.",
+      "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken.",
     images: [
       {
         url: `${siteConfig.url}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Virelio - Digital Innovation for Your Business",
+        alt: "Impulso Co. - Digital Innovation for Your Business",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Virelio | Digitale Medewerkers & AI Agents voor bedrijven",
+    title: "Impulso Co. | Digitale Medewerkers & AI Agents voor bedrijven",
     description: "200+ automatiseringen. AI telefonie die 87% gesprekken automatiseert. Voor MKB & Enterprise.",
-    site: "@Virelio",
-    creator: "@Virelio",
+    site: "@impulsoco",
+    creator: "@impulsoco",
     images: [`${siteConfig.url}/og-image.png`],
   },
   robots: {
@@ -139,7 +139,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Virelio",
+    title: "Impulso Co.",
   },
   other: {
     "msapplication-TileColor": "#ffffff",

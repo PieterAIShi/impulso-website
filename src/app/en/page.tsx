@@ -4,6 +4,7 @@ import Hero from "@/components/sections/hero";
 import CompanySlider from "@/components/sections/company-slider";
 import CaseStudies from "@/components/sections/case-studies";
 import WhyVirelio from "@/components/sections/why-virelio";
+import About from "@/components/sections/about";
 import Certifications from "@/components/sections/certifications";
 import Services from "@/components/sections/services";
 import Testimonials from "@/components/sections/testimonials";
@@ -20,9 +21,9 @@ import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema, certific
 const faqData = {
   items: [
     {
-      question: "What does Virelio do?",
+      question: "What does Impulso Co. do?",
       answer:
-        "Virelio is an AI agent development company based in Amsterdam. We build custom AI agents including WhatsApp AI agents, voice agents, customer service agents, sales agents, knowledge base agents (RAG), compliance agents, and more. 24 specialized agents available, custom-built for your processes.",
+        "Impulso Co. is an AI agent development company based in Amsterdam. We build custom AI agents including WhatsApp AI agents, voice agents, customer service agents, sales agents, knowledge base agents (RAG), compliance agents, and more. 24 specialized agents available, custom-built for your processes.",
     },
     {
       question: "How fast can you deliver?",
@@ -40,9 +41,9 @@ const faqData = {
         "We work with OpenAI, Anthropic Claude, Google Gemini and custom fine-tuned models. For knowledge bases we use RAG (Retrieval Augmented Generation) with vector databases. We integrate with existing systems like HubSpot, Zendesk, Shopify and Exact Online.",
     },
     {
-      question: "Where is Virelio based?",
+      question: "Where is Impulso Co. based?",
       answer:
-        "Virelio is based in Amsterdam, Netherlands. We work with clients across Europe, both remote and on-site.",
+        "Impulso Co. is based in Amsterdam, Netherlands. We work with clients across Europe, both remote and on-site.",
     },
   ],
 };
@@ -53,7 +54,7 @@ const testimonialsData = {
     {
       author: "Giulio Piccolo",
       role: "Lead Engineer @ Suit Supply",
-      text: "The Virelio team stood out for their rapid development and strong foundation in AI. They independently tackled complex topics and delivered valuable insights.",
+      text: "The Impulso Co. team stood out for their rapid development and strong foundation in AI. They independently tackled complex topics and delivered valuable insights.",
     },
     {
       author: "Cristian Arboleda",
@@ -63,12 +64,12 @@ const testimonialsData = {
     {
       author: "Ihor Tolkachov",
       role: "Frontend Developer",
-      text: "Working with Virelio showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds.",
+      text: "Working with Impulso Co. showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds.",
     },
     {
       author: "Oeds de Meer",
       role: "Process & Information Manager @ SBB",
-      text: "Virelio consistently delivered sharp analyses and worked with tools like SQL, Looker, and Python. They recognize patterns in data and provide visual insights that drive better decisions.",
+      text: "Impulso Co. consistently delivered sharp analyses and worked with tools like SQL, Looker, and Python. They recognize patterns in data and provide visual insights that drive better decisions.",
     },
     {
       author: "Laura Britton",
@@ -81,13 +82,13 @@ const testimonialsData = {
 export const metadata: Metadata = generateMetadata({
   title: "Custom AI Agents — Your Digital Team",
   description:
-    "Virelio builds AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks. Based in Amsterdam.",
+    "Impulso Co. builds AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks. Based in Amsterdam.",
   keywords:
-    "custom AI agents, AI agent development company, digital employees, AI automation agency, customer service AI agent, sales automation agent, voice agent, AI phone agent, build AI agents for business, RAG development, retrieval augmented generation, LLM integration, AI chatbot development, WhatsApp AI agent for business, knowledge base AI, RAG system, invoice automation, contract review AI, on-premise AI solutions, AI for SMB, custom agents for clients, AI onboarding agent, compliance agent, lead qualification agent, churn prediction AI, business process automation, Virelio, Amsterdam, Netherlands, Europe",
+    "custom AI agents, AI agent development company, digital employees, AI automation agency, customer service AI agent, sales automation agent, voice agent, AI phone agent, build AI agents for business, RAG development, retrieval augmented generation, LLM integration, AI chatbot development, WhatsApp AI agent for business, knowledge base AI, RAG system, invoice automation, contract review AI, on-premise AI solutions, AI for SMB, custom agents for clients, AI onboarding agent, compliance agent, lead qualification agent, churn prediction AI, business process automation, Impulso Co., Amsterdam, Netherlands, Europe",
   pathname: "/en",
   locale: "en",
   imageUrl: "/og-image.png",
-  imageAlt: "Virelio — Custom AI Agents for Businesses",
+  imageAlt: "Impulso Co. — Custom AI Agents for Businesses",
 });
 
 export default function EnglishHome() {
@@ -110,6 +111,7 @@ export default function EnglishHome() {
         </div>
         <CaseStudies />
         <WhyVirelio />
+        <About />
         <Certifications />
         <div id={siteConfig.sections.testimonials.substring(1)}>
           <Testimonials />

@@ -2,12 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import { LanguageToggle } from "@/components/ui/language-toggle";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { scrollToSection, navigateFromPolicyPage } from "@/lib/scroll-utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react";
-import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 interface NavLink {
@@ -28,6 +26,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
   const defaultNavLinks = [
     { name: t.nav.services, href: "#services" },
     { name: language === 'nl' ? 'Klantresultaten' : 'Case studies', href: "#case-studies" },
+    { name: language === 'nl' ? 'Over ons' : 'About us', href: "#about" },
     { name: language === 'nl' ? 'Aanbevelingen' : 'Testimonials', href: "#testimonials" },
   ];
 
@@ -123,65 +122,57 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
         className={cn(
           "fixed top-0 z-50 w-full transition-all duration-300",
           isScrolled || mobileMenuOpen
-            ? "bg-background/95 backdrop-blur-xl shadow-sm border-b border-border/50"
-            : "bg-background/60 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none"
+            ? "bg-background/95 backdrop-blur-xl border-b border-foreground/10"
+            : "bg-transparent"
         )}
       >
-        <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center flex-shrink-0"
-          >
+        <div className="max-w-[1400px] mx-auto flex h-16 items-center justify-between px-6 sm:px-10 lg:px-16">
+          <div className="flex items-center flex-shrink-0">
             <a
               href="/"
               onClick={(e) => handleNavClick(e, "#")}
-              className="flex items-center hover:opacity-80 transition"
+              className="flex items-center hover:opacity-70 transition-opacity"
             >
-              <span className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">
-                Virelio<span className="text-primary">.</span>
+              <span className="text-lg sm:text-xl font-medium tracking-tight text-foreground">
+                Impulso Co.
               </span>
             </a>
-          </motion.div>
+          </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
-            <ul className="flex space-x-4 lg:space-x-6">
-              {navLinks.map((link) => (
-                <motion.li key={link.name} whileHover={{ y: -2 }}>
-                  <a
-                    href={link.href}
-                    className={cn(
-                      "text-sm font-medium transition-all hover:text-primary relative tracking-tight whitespace-nowrap",
-                      (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === ""))
-                        ? "text-primary font-semibold"
-                        : ""
-                    )}
-                    onClick={(e) => handleNavClick(e, link.href)}
-                  >
-                    {link.name}
-                    {(activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) && (
-                      <motion.div
-                        className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"
-                        layoutId="activeNavIndicator"
-                        transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                      />
-                    )}
-                  </a>
-                </motion.li>
-              ))}
+          <nav className="hidden md:flex items-center gap-8 lg:gap-10">
+            <ul className="flex gap-6 lg:gap-8">
+              {navLinks.map((link) => {
+                const isActive =
+                  activeSection === link.href.replace("#", "") ||
+                  (link.href === "#" && activeSection === "");
+                return (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className={cn(
+                        "text-sm font-normal tracking-normal whitespace-nowrap transition-colors duration-200",
+                        isActive
+                          ? "text-foreground"
+                          : "text-foreground/60 hover:text-foreground"
+                      )}
+                      onClick={(e) => handleNavClick(e, link.href)}
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
-            <div className="flex items-center gap-4">
-              <Button
-                size="sm"
-                asChild
-                className="bg-foreground text-background hover:bg-foreground/90 font-semibold px-5 py-2 rounded-lg shadow-sm"
+            <div className="flex items-center gap-5">
+              <a
+                href="https://calendly.com/omarnassar1127/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-9 px-5 border border-foreground/40 text-sm font-medium text-foreground hover:border-foreground transition-colors duration-200"
               >
-                <a href="https://calendly.com/omarnassar1127/30min" target="_blank" rel="noopener noreferrer">
-                  {language === 'nl' ? 'Plan intake' : 'Book intake'}
-                </a>
-              </Button>
+                {language === 'nl' ? 'Plan intake' : 'Book intake'}
+              </a>
               <LanguageToggle />
             </div>
           </nav>
@@ -191,7 +182,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
             <LanguageToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="relative w-10 h-10 flex items-center justify-center rounded-lg hover:bg-muted/50 transition-colors"
+              className="relative w-10 h-10 flex items-center justify-center hover:bg-foreground/5 transition-colors"
               aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait">
@@ -254,19 +245,13 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                           href={link.href}
                           onClick={(e) => handleNavClick(e, link.href)}
                           className={cn(
-                            "block py-4 text-3xl font-bold tracking-tight transition-colors",
+                            "block py-4 text-3xl font-medium tracking-tight transition-colors",
                             isActive
-                              ? "text-primary"
-                              : "text-foreground/70 active:text-foreground"
+                              ? "text-foreground"
+                              : "text-foreground/50 active:text-foreground"
                           )}
                         >
                           {link.name}
-                          {isActive && (
-                            <motion.div
-                              layoutId="activeMobileNav"
-                              className="h-[3px] w-12 bg-primary rounded-full mt-1"
-                            />
-                          )}
                         </a>
                       </motion.li>
                     );
@@ -288,7 +273,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-semibold py-4 rounded-2xl text-base active:scale-[0.98] transition-transform"
+                  className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-medium py-4 text-sm active:bg-foreground/85 transition-colors"
                 >
                   {language === "nl" ? "Plan gratis intake" : "Book free intake"}
                   <ArrowRight className="w-4 h-4" />
@@ -298,14 +283,14 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                 <div className="flex gap-3">
                   <a
                     href={`tel:${t.contact?.phoneNumber?.replace(/\s+/g, '') || '+31687838713'}`}
-                    className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-2xl border border-border/50 text-sm font-medium text-foreground/70 active:bg-muted/50 transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 py-3.5 border border-foreground/30 text-sm font-medium text-foreground/70 active:bg-foreground/5 transition-colors"
                   >
                     <Phone className="h-4 w-4" />
                     {language === "nl" ? "Bel ons" : "Call us"}
                   </a>
                   <a
                     href={`mailto:${t.contact?.emailAddress || 'info@virelio.nl'}`}
-                    className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-2xl border border-border/50 text-sm font-medium text-foreground/70 active:bg-muted/50 transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 py-3.5 border border-foreground/30 text-sm font-medium text-foreground/70 active:bg-foreground/5 transition-colors"
                   >
                     <Mail className="h-4 w-4" />
                     Email
@@ -314,7 +299,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
 
                 {/* Subtle branding */}
                 <p className="text-center text-xs text-muted-foreground/40 pt-2">
-                  Virelio — Amsterdam, NL
+                  Impulso Co. — Amsterdam, NL
                 </p>
               </motion.div>
             </div>

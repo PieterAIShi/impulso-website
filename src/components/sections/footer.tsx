@@ -33,8 +33,8 @@ export default function Footer() {
                 }}
               >
                 <span className="flex items-center gap-2.5 text-2xl font-black tracking-tight">
-                  <img src="/favicon-96x96.png" alt="Virelio logo" className="h-8 w-8 rounded-lg" />
-                  Virelio<span className="text-primary">.</span>
+                  <img src="/favicon-96x96.png" alt="Impulso Co. logo" className="h-8 w-8 rounded-lg" />
+                  Impulso Co.<span className="text-primary">.</span>
                 </span>
               </a>
               <p className="text-sm sm:text-base text-muted-foreground max-w-full sm:max-w-md leading-relaxed">
@@ -208,7 +208,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-border/50 mt-16 pt-8">
           <p className="text-xs text-muted-foreground text-center">
-            &copy; {new Date().getFullYear()} Virelio. {t.footer.rights}
+            &copy; {new Date().getFullYear()} Impulso Co. {t.footer.rights}
           </p>
         </div>
       </div>

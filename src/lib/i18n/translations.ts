@@ -3,7 +3,7 @@ export const translations = {
     // Voice AI translations
     voiceAI: {
       company: {
-        name: "Virelio",
+        name: "Impulso Co.",
         tagline: "Stem AI Operaties voor Ondernemingen",
       },
       contact: {
@@ -63,7 +63,7 @@ export const translations = {
         },
       },
       solution: {
-        title: "Zie Virelio in actie",
+        title: "Zie Impulso Co. in actie",
         subtitle: "Ervaar hoe menselijke AI klantinteracties afhandelt",
         demoScenarios: [
           {
@@ -103,28 +103,28 @@ export const translations = {
         testimonials: [
           // {
           //   quote:
-          //     "De implementatie van Virelio's voice AI heeft onze responstijden drastisch verbeterd. Klanten krijgen nu direct hulp, zelfs buiten kantooruren.",
+          //     "De implementatie van Impulso Co.'s voice AI heeft onze responstijden drastisch verbeterd. Klanten krijgen nu direct hulp, zelfs buiten kantooruren.",
           //   author: "Lars van der Berg",
           //   company: "Vloto",
           //   role: "Customer Success Manager",
           // },
           {
             quote:
-              "We hebben de klanttevredenheid zien stijgen met 35% sinds we Virelio gebruiken. De AI begrijpt context en geeft relevante antwoorden.",
+              "We hebben de klanttevredenheid zien stijgen met 35% sinds we Impulso Co. gebruiken. De AI begrijpt context en geeft relevante antwoorden.",
             author: "Sophie Martens",
             company: "Capgemini",
             role: "Service Delivery Lead",
           },
           {
             quote:
-              "Onze supportafdeling kan zich nu focussen op complexe vraagstukken terwijl Virelio de standaardvragen afhandelt. Een game-changer.",
+              "Onze supportafdeling kan zich nu focussen op complexe vraagstukken terwijl Impulso Co. de standaardvragen afhandelt. Een game-changer.",
             author: "Mark Jansen",
             company: "E-flux",
             role: "Operations Manager",
           },
           {
             quote:
-              "De integratie was naadloos en binnen een week zagen we al resultaat. Virelio heeft onze verwachtingen overtroffen.",
+              "De integratie was naadloos en binnen een week zagen we al resultaat. Impulso Co. heeft onze verwachtingen overtroffen.",
             author: "Emma de Vries",
             company: "Road",
             role: "Product Manager",
@@ -143,13 +143,13 @@ export const translations = {
           },
           {
             value: "100+",
-            label: "bedrijven vertrouwen Virelio",
+            label: "bedrijven vertrouwen Impulso Co.",
             icon: "Users",
           },
         ],
       },
       benefits: {
-        title: "Waarom kiezen voor Virelio",
+        title: "Waarom kiezen voor Impulso Co.",
         subtitle: "Drie voordelen die je klantinteracties transformeren",
         items: [
           {
@@ -214,12 +214,12 @@ export const translations = {
             {
               title: "Live stem‑AI interactie",
               description:
-                "zie hoe Virelio klantscenario's in jouw sector afhandelt",
+                "zie hoe Impulso Co. klantscenario's in jouw sector afhandelt",
             },
             {
               title: "Aangepast integratieplan",
               description:
-                "hoe Virelio aansluit op je huidige systemen",
+                "hoe Impulso Co. aansluit op je huidige systemen",
             },
             {
               title: "ROI‑calculator",
@@ -287,7 +287,7 @@ export const translations = {
 
     // Hero
     hero: {
-      title: "Virelio bouwt AI.",
+      title: "Impulso Co. bouwt AI.",
       subtitle:
         "AI-chatbots, kennisbanken, automatiseringen. Maatwerk webshops en tools. Van idee naar werkend systeem in 2 weken.",
       ctaButton: "Bekijk Onze Projecten",
@@ -389,11 +389,11 @@ export const translations = {
     about: {
       title: "Over Ons",
       subtitle: "Ons team en onze missie",
-      theTeam: "Het Virelio team",
+      theTeam: "Het Impulso Co. team",
       description:
-        "Wij zijn Virelio. Een team van nuchtere IT'ers met 5+ jaar ervaring bij grote organisaties. We bouwen en testen snel. Nieuwe tool gezien? Die dag nog een prototype.\nWe maken complexe technologie praktisch en toepasbaar. Geen lange theorie, wel oplossingen die direct waarde leveren voor MKB en enterprise.\nVan snelle experimenten tot stabiele productiesystemen. Van automatisering tot maatwerk AI. Gericht, efficiënt, praktisch.",
+        "Twee gedreven jongens die graag bedrijven helpen automatiseren, efficiënter werken en AI integreren. We bouwen en testen snel. Nieuw idee of verzoek? Dezelfde dag nog een prototype.\nWe maken complexe technologie praktisch en toepasbaar. Geen lange theorie, wel oplossingen die direct waarde leveren voor MKB en enterprise.\nVan snelle experimenten tot stabiele productiesystemen. Van automatisering tot maatwerk AI. Gericht, efficiënt, praktisch.",
       missionTitle: "Onze Missie",
-      teamTitle: "Over Virelio",
+      teamTitle: "Over Impulso Co.",
       missionDescription:
         "Onze missie is om bedrijven te helpen groeien door digitale innovatie. We bouwen hoogwaardige oplossingen die eenvoudig te gebruiken zijn en impact maken. We combineren technische expertise met zakelijk inzicht om resultaat te leveren dat jouw bedrijf vooruit helpt.",
       valuesTitle: "Onze Waarden",
@@ -835,7 +835,7 @@ export const translations = {
     // Voice AI translations
     voiceAI: {
       company: {
-        name: "Virelio",
+        name: "Impulso Co.",
         tagline: "Voice AI Operations for Enterprise",
       },
       contact: {
@@ -892,7 +892,7 @@ export const translations = {
         },
       },
       solution: {
-        title: "See Virelio in Action",
+        title: "See Impulso Co. in Action",
         subtitle:
           "Experience how human-like AI handles real customer interactions",
         demoScenarios: [
@@ -932,28 +932,28 @@ export const translations = {
         testimonials: [
           // {
           //   quote:
-          //     "Implementing Virelio's voice AI has drastically improved our response times. Customers now get instant help, even outside office hours.",
+          //     "Implementing Impulso Co.'s voice AI has drastically improved our response times. Customers now get instant help, even outside office hours.",
           //   author: "Lars van der Berg",
           //   company: "Vloto",
           //   role: "Customer Success Manager",
           // },
           {
             quote:
-              "We've seen customer satisfaction increase by 35% since using Virelio. The AI understands context and provides relevant answers.",
+              "We've seen customer satisfaction increase by 35% since using Impulso Co. The AI understands context and provides relevant answers.",
             author: "Sophie Martens",
             company: "Capgemini",
             role: "Service Delivery Lead",
           },
           {
             quote:
-              "Our support team can now focus on complex issues while Virelio handles standard queries. It's been a game-changer.",
+              "Our support team can now focus on complex issues while Impulso Co. handles standard queries. It's been a game-changer.",
             author: "Mark Jansen",
             company: "E-flux",
             role: "Operations Manager",
           },
           {
             quote:
-              "The integration was seamless and we saw results within a week. Virelio exceeded our expectations.",
+              "The integration was seamless and we saw results within a week. Impulso Co. exceeded our expectations.",
             author: "Emma de Vries",
             company: "Road",
             role: "Product Manager",
@@ -972,13 +972,13 @@ export const translations = {
           },
           {
             value: "100+",
-            label: "Companies trust Virelio",
+            label: "Companies trust Impulso Co.",
             icon: "Users",
           },
         ],
       },
       benefits: {
-        title: "Why Choose Virelio",
+        title: "Why Choose Impulso Co.",
         subtitle: "Three core benefits that transform your customer operations",
         items: [
           {
@@ -1023,7 +1023,7 @@ export const translations = {
       cta: {
         title: "Ready to hear how it sounds?",
         subtitle:
-          "Get a personalized demo of Virelio handling your specific use case",
+          "Get a personalized demo of Impulso Co. handling your specific use case",
         ctaText: "Book Your Demo",
         form: {
           name: "Full Name",
@@ -1043,12 +1043,12 @@ export const translations = {
             {
               title: "Live Voice AI Interaction",
               description:
-                "See Virelio handle real customer scenarios in your industry",
+                "See Impulso Co. handle real customer scenarios in your industry",
             },
             {
               title: "Custom Integration Plan",
               description:
-                "Walkthrough of how Virelio fits into your current systems",
+                "Walkthrough of how Impulso Co. fits into your current systems",
             },
             {
               title: "ROI Calculator",
@@ -1115,7 +1115,7 @@ export const translations = {
 
     // Hero
     hero: {
-      title: "Virelio builds AI.",
+      title: "Impulso Co. builds AI.",
       subtitle:
         "AI chatbots, knowledge bases, automations. Custom e-commerce and internal tools. From idea to working system in 2 weeks.",
       ctaButton: "View Our Work",
@@ -1217,11 +1217,11 @@ export const translations = {
     about: {
       title: "About Us",
       subtitle: "Learn more about our team and mission.",
-      theTeam: "The Virelio team",
+      theTeam: "The Impulso Co. team",
       description:
-        "We are Virelio. A team of down-to-earth IT professionals with over 5 years of experience and a diverse portfolio of projects at major companies. Rather than passive consumption, we build. Read about something new? We test it. New AI tool? We have a working prototype the same day.\nWe make complex technology understandable and immediately applicable. No lengthy theories, just smart solutions that deliver immediate value — for both local entrepreneurs and large corporations.\nFrom rapid experiments to stable production systems. From clever automation to powerful AI applications. We keep building. Focused. Efficient. Practical.",
+        "Two driven guys who love helping companies automate, work more efficiently and integrate AI. We build and test fast. New idea or request? A working prototype the same day.\nWe make complex technology understandable and immediately applicable. No lengthy theories, just smart solutions that deliver immediate value — for both local entrepreneurs and large corporations.\nFrom rapid experiments to stable production systems. From clever automation to powerful AI applications. We keep building. Focused. Efficient. Practical.",
       missionTitle: "Our Mission",
-      teamTitle: "About Virelio",
+      teamTitle: "About Impulso Co.",
       missionDescription:
         "Our mission is to help businesses grow through digital innovation. We believe in building high-quality solutions that are easy to use and make a real impact. We combine technical expertise with business acumen to deliver results that propel your business forward.",
       valuesTitle: "Our Values",

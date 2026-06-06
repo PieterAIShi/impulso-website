@@ -11,7 +11,7 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Virelio Voice AI",
+    "name": "Impulso Co. Voice AI",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web, Cloud",
     "description": lang === 'nl' 
@@ -20,7 +20,7 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
     "url": lang === 'nl' ? "https://virelio.nl/spraakassistent" : "https://virelio.nl/voiceassistant",
     "provider": {
       "@type": "Organization",
-      "name": "Virelio",
+      "name": "Impulso Co.",
       "url": "https://virelio.nl",
       "logo": "https://virelio.nl/og-image.png",
       "address": {
@@ -77,10 +77,10 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
       },
       {
         "@type": "Question",
-        "name": "Hoeveel kost de Virelio spraakassistent?",
+        "name": "Hoeveel kost de Impulso Co. spraakassistent?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Virelio biedt een gratis proefperiode zonder opstartkosten. Contacteer ons voor een op maat gemaakt prijsvoorstel gebaseerd op uw bedrijfsbehoeften."
+          "text": "Impulso Co. biedt een gratis proefperiode zonder opstartkosten. Contacteer ons voor een op maat gemaakt prijsvoorstel gebaseerd op uw bedrijfsbehoeften."
         }
       },
       {
@@ -102,10 +102,10 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
       },
       {
         "@type": "Question",
-        "name": "How much does the Virelio voice assistant cost?",
+        "name": "How much does the Impulso Co. voice assistant cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Virelio offers a free trial with no setup fees. Contact us for a customized pricing proposal based on your business needs."
+          "text": "Impulso Co. offers a free trial with no setup fees. Contact us for a customized pricing proposal based on your business needs."
         }
       },
       {
@@ -141,10 +141,10 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
   const localBusinessData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Virelio - AI Spraakassistent",
+    "name": "Impulso Co. - AI Spraakassistent",
     "description": lang === 'nl' 
-      ? "Virelio levert geavanceerde AI spraakassistenten voor bedrijven in Nederland. Automatiseer klantgesprekken, verhoog efficiency."
-      : "Virelio delivers advanced AI voice assistants for businesses. Automate customer calls, increase efficiency.",
+      ? "Impulso Co. levert geavanceerde AI spraakassistenten voor bedrijven in Nederland. Automatiseer klantgesprekken, verhoog efficiency."
+      : "Impulso Co. delivers advanced AI voice assistants for businesses. Automate customer calls, increase efficiency.",
     "url": "https://virelio.nl",
     "telephone": "+31687838713",
     "address": {

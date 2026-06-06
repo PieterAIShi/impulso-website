@@ -18,7 +18,7 @@ import {
 export const metadata = genMeta({
   title: "AI Automatisering voor MKB — Betaalbaar & Schaalbaar",
   description:
-    "AI automatisering speciaal voor het Nederlandse MKB. Betaalbaar vanaf €2.000, live in 2 weken, geen IT-afdeling nodig. Inclusief WBSO-subsidie van 35%. Virelio, Amsterdam.",
+    "AI automatisering speciaal voor het Nederlandse MKB. Betaalbaar vanaf €2.000, live in 2 weken, geen IT-afdeling nodig. Inclusief WBSO-subsidie van 35%. Impulso Co., Amsterdam.",
   keywords:
     "AI automatisering MKB, AI voor MKB, AI agent MKB, automatisering midden klein bedrijf, betaalbare AI, WBSO subsidie AI, AI HubSpot integratie, Shopify AI automatisering, Exact Online AI, AI bureau MKB Nederland, klantenservice automatisering MKB",
   pathname: "/diensten/ai-automatisering-mkb",
@@ -174,7 +174,7 @@ export default function AIAutomatiseringMKBPage() {
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
               Klaar met handmatig facturen versturen, dezelfde e-mails
-              beantwoorden en orders nakijken? Virelio bouwt AI agents die deze
+              beantwoorden en orders nakijken? Impulso Co. bouwt AI agents die deze
               taken volledig overnemen — betaalbaar, snel en zonder IT-afdeling.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -491,7 +491,7 @@ export default function AIAutomatiseringMKBPage() {
               </a>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Virelio — AI Agent Bureau · Amsterdam ·{" "}
+              Impulso Co. — AI Agent Bureau · Amsterdam ·{" "}
               <a
                 href="tel:+31687838713"
                 className="hover:text-foreground transition-colors"

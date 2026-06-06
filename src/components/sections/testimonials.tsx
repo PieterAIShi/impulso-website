@@ -24,8 +24,8 @@ const testimonials: Testimonial[] = [
     },
     image: "/images/references/giulio.jpeg",
     content: {
-      en: "The Virelio team stood out for their rapid development and strong foundation in AI. They independently tackled complex topics and delivered valuable insights. A team with a steep learning curve that quickly makes impact.",
-      nl: "Het Virelio team viel op door hun snelle ontwikkeling en sterke basis in AI. Ze pakten zelfstandig complexe onderwerpen op en leverden waardevolle inzichten. Een team met een sterke leercurve dat snel impact maakt.",
+      en: "The Impulso Co. team stood out for their rapid development and strong foundation in AI. They independently tackled complex topics and delivered valuable insights. A team with a steep learning curve that quickly makes impact.",
+      nl: "Het Impulso Co. team viel op door hun snelle ontwikkeling en sterke basis in AI. Ze pakten zelfstandig complexe onderwerpen op en leverden waardevolle inzichten. Een team met een sterke leercurve dat snel impact maakt.",
     },
     rating: 5,
   },
@@ -49,8 +49,8 @@ const testimonials: Testimonial[] = [
     },
     image: "/images/references/ihor.jpeg",
     content: {
-      en: "Working with Virelio showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds — truly impressive efficiency improvement.",
-      nl: "Het werken met Virelio toonde hun betrouwbaarheid en vaardigheid. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden — indrukwekkend.",
+      en: "Working with Impulso Co. showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds — truly impressive efficiency improvement.",
+      nl: "Het werken met Impulso Co. toonde hun betrouwbaarheid en vaardigheid. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden — indrukwekkend.",
     },
     rating: 5,
   },
@@ -63,8 +63,8 @@ const testimonials: Testimonial[] = [
     },
     image: "/images/references/oeds.jpeg",
     content: {
-      en: "Virelio consistently delivered sharp analyses and worked with tools like SQL, Looker, and Python. They recognize patterns in data, think analytically, and provide visual insights that drive better decisions.",
-      nl: "Virelio leverde continu scherpe analyses en werkte met tools als SQL, Looker en Python. Ze herkennen patronen in data, denken analytisch en leveren visuele inzichten die bijdragen aan betere beslissingen.",
+      en: "Impulso Co. consistently delivered sharp analyses and worked with tools like SQL, Looker, and Python. They recognize patterns in data, think analytically, and provide visual insights that drive better decisions.",
+      nl: "Impulso Co. leverde continu scherpe analyses en werkte met tools als SQL, Looker en Python. Ze herkennen patronen in data, denken analytisch en leveren visuele inzichten die bijdragen aan betere beslissingen.",
     },
     rating: 5,
   },

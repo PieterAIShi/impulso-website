@@ -476,7 +476,7 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <h4 className="text-sm font-semibold">Virelio</h4>
+                <h4 className="text-sm font-semibold">Impulso Co.</h4>
                 <p className="text-xs text-muted-foreground">Contactpersoon</p>
               </div>
             </motion.div>

@@ -8,7 +8,7 @@ import { ArrowRight, Bot, Zap, Users, BookOpen, TrendingUp, CheckCircle, Clock, 
 export const metadata = genMeta({
   title: "AI Agent Laten Bouwen — Maatwerk AI Agents",
   description:
-    "Laat een maatwerk AI agent bouwen door Virelio. Van klantenservice tot sales: wij leveren werkende AI agents in 2 weken. Prijzen vanaf €2.000. GDPR-compliant, Amsterdam.",
+    "Laat een maatwerk AI agent bouwen door Impulso Co. Van klantenservice tot sales: wij leveren werkende AI agents in 2 weken. Prijzen vanaf €2.000. GDPR-compliant, Amsterdam.",
   keywords:
     "AI agent laten bouwen, maatwerk AI agent, AI agent ontwikkeling, AI agent bouwen Nederland, custom AI agent, AI automatisering, AI bureau Amsterdam, AI agent kosten, klantenservice AI, sales agent AI",
   pathname: "/diensten/ai-agent-bouwen",
@@ -37,7 +37,7 @@ const faqItems = [
       "Ja. Wij integreren met de meeste gangbare bedrijfssoftware: HubSpot, Salesforce, Zendesk, Exact Online, Shopify, Slack, en meer. Heeft u een eigen systeem? Via een API of webhook koppelen wij daar ook op aan.",
   },
   {
-    question: "Is mijn data veilig bij een AI agent van Virelio?",
+    question: "Is mijn data veilig bij een AI agent van Impulso Co.?",
     answer:
       "Absoluut. Wij werken GDPR-compliant en al uw data wordt verwerkt binnen de EU. On-premise deployment is mogelijk als u data uw bedrijfsnetwerk niet wilt verlaten. U behoudt altijd 100% eigenaarschap van uw data — geen vendor lock-in.",
   },
@@ -192,7 +192,7 @@ export default function AIAgentBouwenPage() {
               <span className="block text-primary mt-1">voor Jouw Bedrijf</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
-              Virelio bouwt maatwerk AI agents die zelfstandig taken uitvoeren,
+              Impulso Co. bouwt maatwerk AI agents die zelfstandig taken uitvoeren,
               beslissingen nemen en integreren met uw bestaande software.
               Prototype in 1 week. Live in 2 weken. Vanaf €2.000.
             </p>
@@ -535,7 +535,7 @@ export default function AIAgentBouwenPage() {
               </a>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Virelio — AI Agent Bureau · Amsterdam ·{" "}
+              Impulso Co. — AI Agent Bureau · Amsterdam ·{" "}
               <a
                 href="tel:+31687838713"
                 className="hover:text-foreground transition-colors"

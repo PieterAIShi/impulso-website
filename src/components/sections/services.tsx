@@ -453,7 +453,7 @@ function ChatTemplate({ activeAgent, agents, language }: { activeAgent: number; 
           { from: "agent", text: "Staat genoteerd! Je krijgt een bevestiging via WhatsApp en een herinnering morgenochtend. Tot donderdag!" },
         ],
         [
-          { from: "agent", text: "Goedemiddag, u spreekt met Virelio. Waarmee kan ik u helpen? 📞" },
+          { from: "agent", text: "Goedemiddag, u spreekt met Impulso Co. Waarmee kan ik u helpen? 📞" },
           { from: "customer", text: "Ik wil graag een afspraak maken voor volgende week" },
           { from: "agent", text: "Natuurlijk! Ik zie dat dinsdag 10:00 en woensdag 14:00 beschikbaar zijn. Wat past u het beste?" },
           { from: "customer", text: "Dinsdag 10:00 graag" },
@@ -481,7 +481,7 @@ function ChatTemplate({ activeAgent, agents, language }: { activeAgent: number; 
           { from: "agent", text: "Booked! You'll get a WhatsApp confirmation and a reminder tomorrow morning. See you Thursday!" },
         ],
         [
-          { from: "agent", text: "Good afternoon, you're speaking with Virelio. How can I help you? 📞" },
+          { from: "agent", text: "Good afternoon, you're speaking with Impulso Co. How can I help you? 📞" },
           { from: "customer", text: "I'd like to schedule an appointment for next week" },
           { from: "agent", text: "Of course! I see Tuesday 10:00 and Wednesday 14:00 are available. What works best?" },
           { from: "customer", text: "Tuesday 10:00 please" },

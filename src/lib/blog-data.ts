@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Transparante prijzen voor AI agent ontwikkeling in 2026. Van eenvoudige bots (€2.000) tot enterprise systemen (€15.000+). Inclusief maandelijkse kosten, ROI-berekeningen en WBSO-subsidie.",
     publishedAt: "2026-02-10",
-    author: "Virelio Team",
+    author: "Impulso Co. Team",
     readingTime: 7,
     keywords: [
       "kosten AI agent",
@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
     ],
     content: `<p>Een van de eerste vragen die ondernemers stellen is: "Wat kost een AI agent eigenlijk?" Het eerlijke antwoord is dat het sterk afhangt van de complexiteit — maar in dit artikel geven we je concrete cijfers zodat je een weloverwogen beslissing kunt nemen.</p>
 
-<p>Bij Virelio hanteren we transparante prijzen. Geen vage "neem contact op voor een offerte" zonder enige indicatie. Hieronder vind je een eerlijk overzicht van de werkelijke kosten in 2026.</p>
+<p>Bij Impulso Co. hanteren we transparante prijzen. Geen vage "neem contact op voor een offerte" zonder enige indicatie. Hieronder vind je een eerlijk overzicht van de werkelijke kosten in 2026.</p>
 
 <h2>Ontwikkelkosten: wat betaal je eenmalig?</h2>
 
@@ -138,7 +138,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Wat krijg je voor dit geld?</h2>
 
-<p>Om verwachtingen helder te stellen: bij Virelio lever je geen PoC of prototype. Je krijgt een productierijde oplossing met:</p>
+<p>Om verwachtingen helder te stellen: bij Impulso Co. lever je geen PoC of prototype. Je krijgt een productierijde oplossing met:</p>
 <ul>
   <li>Volledige broncode in jouw GitHub repository</li>
   <li>Documentatie voor beheer en uitbreidingen</li>
@@ -164,7 +164,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Een chatbot volgt scripts. Een AI agent denkt, plant en handelt zelfstandig. Ontdek het praktische verschil en wanneer je welke oplossing kiest voor jouw bedrijf.",
     publishedAt: "2026-02-18",
-    author: "Virelio Team",
+    author: "Impulso Co. Team",
     readingTime: 6,
     keywords: [
       "AI agent vs chatbot",
@@ -293,7 +293,7 @@ export const blogPosts: BlogPost[] = [
   <li>Maand 3+: Uitbreiding naar telefoon en e-mail, met gedeeld geheugen</li>
 </ol>
 
-<p>Dit is precies hoe wij bij Virelio te werk gaan: starten met een scherp afgebakende use case, resultaat meten, en daarna schalen.</p>
+<p>Dit is precies hoe wij bij Impulso Co. te werk gaan: starten met een scherp afgebakende use case, resultaat meten, en daarna schalen.</p>
 
 <h2>Conclusie</h2>
 
@@ -308,7 +308,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Hoe AI agents 80% van supporttickets afhandelen zonder menselijke tussenkomst. Integraties met Zendesk, Intercom en WhatsApp. Besparing: 2 FTE = €80.000/jaar.",
     publishedAt: "2026-02-28",
-    author: "Virelio Team",
+    author: "Impulso Co. Team",
     readingTime: 8,
     keywords: [
       "klantenservice automatiseren",
@@ -444,7 +444,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Wat is RAG, hoe werkt het en wanneer heb je het nodig? Praktische uitleg over vector databases, embeddings en use cases voor kennisbank, compliance en onboarding.",
     publishedAt: "2026-03-05",
-    author: "Virelio Team",
+    author: "Impulso Co. Team",
     readingTime: 9,
     keywords: [
       "RAG systeem bouwen",
@@ -566,7 +566,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "7-punts AI readiness checklist voor MKB. Ontdek de echte barrières, wanneer je moet beginnen ondanks imperfecte omstandigheden, en wat de eerste stap is.",
     publishedAt: "2026-03-10",
-    author: "Virelio Team",
+    author: "Impulso Co. Team",
     readingTime: 7,
     keywords: [
       "AI readiness check",
@@ -697,7 +697,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "WhatsApp Business API + AI: hoe het werkt, wat het kost (setup €2.000–€8.000) en wat het oplevert. Inclusief ZapBot case study: 40% minder no-shows, €2.800/maand bespaard.",
     publishedAt: "2026-03-14",
-    author: "Virelio Team",
+    author: "Impulso Co. Team",
     readingTime: 8,
     keywords: [
       "WhatsApp AI agent bedrijven",
@@ -781,7 +781,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Case study: ZapBot — WhatsApp AI agent voor Nederlandse bedrijven</h2>
 
-<p>ZapBot (zapbot.nl) is een WhatsApp AI agent die Virelio heeft gebouwd voor de Nederlandse MKB-markt. De agent richt zich specifiek op bedrijven met een hoge afspraakfrequentie: klinieken, kappers, schoonheidssalons, fysiotherapeuten, tandartsen, autogarages.</p>
+<p>ZapBot (zapbot.nl) is een WhatsApp AI agent die Impulso Co. heeft gebouwd voor de Nederlandse MKB-markt. De agent richt zich specifiek op bedrijven met een hoge afspraakfrequentie: klinieken, kappers, schoonheidssalons, fysiotherapeuten, tandartsen, autogarages.</p>
 
 <h3>Het probleem voor de klant</h3>
 <p>Een van de vroege ZapBot-klanten — een fysiotherapiepraktijk in Amsterdam met 4 therapeuten — had een no-show rate van 22%. Bij gemiddeld 120 afspraken per week en een behandelprijs van €65, betekende dit een omisderving van:</p>

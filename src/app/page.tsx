@@ -4,6 +4,7 @@ import Hero from "@/components/sections/hero";
 import CompanySlider from "@/components/sections/company-slider";
 import CaseStudies from "@/components/sections/case-studies";
 import WhyVirelio from "@/components/sections/why-virelio";
+import About from "@/components/sections/about";
 import Certifications from "@/components/sections/certifications";
 import Services from "@/components/sections/services";
 import Testimonials from "@/components/sections/testimonials";
@@ -20,9 +21,9 @@ import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema, certific
 const faqData = {
   items: [
     {
-      question: "Wat doet Virelio?",
+      question: "Wat doet Impulso Co.?",
       answer:
-        "Virelio is een AI-bureau in Amsterdam dat custom AI-agents bouwt voor bedrijven. Van WhatsApp AI agents en voice agents tot klantenservice agents, sales agents, kennisbank agents (RAG), compliance agents en meer. 24 gespecialiseerde agents beschikbaar, op maat gebouwd voor jouw processen.",
+        "Impulso Co. is een AI-bureau in Amsterdam dat custom AI-agents bouwt voor bedrijven. Van WhatsApp AI agents en voice agents tot klantenservice agents, sales agents, kennisbank agents (RAG), compliance agents en meer. 24 gespecialiseerde agents beschikbaar, op maat gebouwd voor jouw processen.",
     },
     {
       question: "Hoe snel kunnen jullie leveren?",
@@ -40,9 +41,9 @@ const faqData = {
         "We werken met OpenAI, Anthropic Claude, Google Gemini en custom fine-tuned modellen. Voor kennisbanken gebruiken we RAG (Retrieval Augmented Generation) met vectordatabases. We integreren met bestaande systemen zoals HubSpot, Zendesk, Shopify en Exact Online.",
     },
     {
-      question: "Waar is Virelio gevestigd?",
+      question: "Waar is Impulso Co. gevestigd?",
       answer:
-        "Virelio is gevestigd in Amsterdam, Nederland. We werken met klanten door heel Europa, zowel remote als on-site.",
+        "Impulso Co. is gevestigd in Amsterdam, Nederland. We werken met klanten door heel Europa, zowel remote als on-site.",
     },
   ],
 };
@@ -53,7 +54,7 @@ const testimonialsData = {
     {
       author: "Giulio Piccolo",
       role: "Lead Engineer @ Suit Supply",
-      text: "The Virelio team stood out for their rapid development and strong foundation in AI. They independently tackled complex topics and delivered valuable insights.",
+      text: "The Impulso Co. team stood out for their rapid development and strong foundation in AI. They independently tackled complex topics and delivered valuable insights.",
     },
     {
       author: "Cristian Arboleda",
@@ -63,12 +64,12 @@ const testimonialsData = {
     {
       author: "Ihor Tolkachov",
       role: "Frontend Developer",
-      text: "Working with Virelio showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds.",
+      text: "Working with Impulso Co. showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds.",
     },
     {
       author: "Oeds de Meer",
       role: "Process & Information Manager @ SBB",
-      text: "Virelio consistently delivered sharp analyses and worked with tools like SQL, Looker, and Python. They recognize patterns in data and provide visual insights that drive better decisions.",
+      text: "Impulso Co. consistently delivered sharp analyses and worked with tools like SQL, Looker, and Python. They recognize patterns in data and provide visual insights that drive better decisions.",
     },
     {
       author: "Laura Britton",
@@ -83,12 +84,12 @@ const testimonialsData = {
 export const metadata: Metadata = generateMetadata({
   title: "Digitale Medewerkers & AI Agents voor bedrijven",
   description:
-    "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
+    "Impulso Co. bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
   keywords:
-    "AI agents op maat, custom AI agents, digitale medewerkers, AI automatisering bedrijven, klantenservice AI agent, klantenservice automatiseren, sales automatisering, AI agent bouwen, RAG development, RAG systeem, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, voice agent, AI telefoon agent, AI spraakassistent zakelijk, kennisbank AI, facturatie automatiseren, AI bureau Amsterdam, on-premise AI, AI oplossingen MKB, custom agents voor klanten, AI onboarding agent, compliance agent, lead kwalificatie agent, bedrijfsprocessen automatiseren, Virelio, Nederland",
+    "AI agents op maat, custom AI agents, digitale medewerkers, AI automatisering bedrijven, klantenservice AI agent, klantenservice automatiseren, sales automatisering, AI agent bouwen, RAG development, RAG systeem, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, voice agent, AI telefoon agent, AI spraakassistent zakelijk, kennisbank AI, facturatie automatiseren, AI bureau Amsterdam, on-premise AI, AI oplossingen MKB, custom agents voor klanten, AI onboarding agent, compliance agent, lead kwalificatie agent, bedrijfsprocessen automatiseren, Impulso Co., Nederland",
   pathname: "/",
   imageUrl: "/og-image.png",
-  imageAlt: "Virelio — AI Agents op Maat voor Bedrijven",
+  imageAlt: "Impulso Co. — AI Agents op Maat voor Bedrijven",
 });
 
 export default function Home() {
@@ -111,6 +112,7 @@ export default function Home() {
         </div>
         <CaseStudies />
         <WhyVirelio />
+        <About />
         <Certifications />
         <div id={siteConfig.sections.testimonials.substring(1)}>
           <Testimonials />

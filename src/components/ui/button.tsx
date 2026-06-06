@@ -2,10 +2,9 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { motion, HTMLMotionProps } from "framer-motion";
 
-export interface ButtonProps 
-  extends Omit<HTMLMotionProps<"button">, "whileHover" | "whileTap"> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "default" | "outline" | "ghost" | "link";
   size?: "default" | "sm" | "lg" | "icon" | "mobile";
   asChild?: boolean;
@@ -13,6 +12,10 @@ export interface ButtonProps
   fullWidth?: boolean;
 }
 
+/**
+ * Polestar-style button: square corners, no shadows, no scale effects.
+ * Solid fills or thin 1px borders; quiet hover states only.
+ */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -21,48 +24,43 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = "default",
       asChild = false,
       isLoading = false,
+      fullWidth = false,
       ...props
     },
     ref
   ) => {
-    const Comp = motion.button;
-    
-    const motionProps = {
-      whileHover: { scale: 1.03 },
-      whileTap: { scale: 0.98 }
-    };
-    
     return (
-      <Comp
+      <button
         className={cn(
-          "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 tracking-tight touch-manipulation",
+          "inline-flex items-center justify-center rounded-none font-medium tracking-normal transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground disabled:pointer-events-none disabled:opacity-50 touch-manipulation",
           {
-            "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg":
+            "bg-foreground text-background hover:bg-foreground/85":
               variant === "default",
-            "border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground":
+            "border border-foreground/40 bg-transparent text-foreground hover:border-foreground":
               variant === "outline",
-            "hover:bg-accent hover:text-accent-foreground": variant === "ghost",
-            "text-primary underline-offset-4 hover:underline":
+            "bg-transparent text-foreground hover:bg-foreground/5":
+              variant === "ghost",
+            "text-foreground underline-offset-4 hover:underline p-0 h-auto":
               variant === "link",
-            "h-10 px-4 py-2.5 text-base": size === "default",
-            "h-9 rounded-md px-4 text-sm": size === "sm",
-            "h-12 rounded-xl px-6 text-lg font-semibold min-w-[200px]": size === "lg",
-            "h-12 rounded-xl px-6 py-4 text-base font-semibold w-full sm:w-auto sm:min-w-[200px]": size === "mobile",
+            "h-11 px-6 text-sm": size === "default" && variant !== "link",
+            "h-9 px-4 text-sm": size === "sm" && variant !== "link",
+            "h-12 px-8 text-sm min-w-[180px]": size === "lg" && variant !== "link",
+            "h-12 px-8 text-sm w-full sm:w-auto sm:min-w-[180px]":
+              size === "mobile" && variant !== "link",
             "h-10 w-10": size === "icon",
-            // "w-full": fullWidth,
-            "min-h-[44px] min-w-[44px]": size !== "icon", // Ensure touch-friendly size
+            "w-full": fullWidth,
+            "min-h-[44px] min-w-[44px]": size !== "icon" && variant !== "link",
           },
           className
         )}
         ref={ref}
-        {...motionProps}
         {...props}
       >
         {isLoading ? (
-          <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+          <div className="mr-2 h-4 w-4 animate-spin rounded-full border border-current border-t-transparent" />
         ) : null}
         {props.children as React.ReactNode}
-      </Comp>
+      </button>
     );
   }
 );

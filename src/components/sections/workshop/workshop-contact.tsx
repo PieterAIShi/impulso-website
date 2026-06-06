@@ -96,7 +96,7 @@ export default function WorkshopContact() {
       {/* Logo + title */}
       <div className="text-center mb-8">
         <div className="flex justify-center mb-4">
-          <img src="/favicon-96x96.png" alt="Virelio logo" className="h-12 w-12 rounded-lg" />
+          <img src="/favicon-96x96.png" alt="Impulso Co. logo" className="h-12 w-12 rounded-lg" />
         </div>
         <h3 className="text-2xl font-bold mb-2">
           {t.workshop.contactForm.title}

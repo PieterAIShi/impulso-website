@@ -19,7 +19,7 @@ import {
 export const metadata = genMeta({
   title: "Digitale Medewerker — AI die Zelfstandig Werk Overneemt",
   description:
-    "Een digitale medewerker van Virelio werkt 24/7, maakt geen fouten en kost een fractie van een menselijke FTE. Multi-agent AI die taken overneemt in HR, finance, operations en klantenservice. Amsterdam.",
+    "Een digitale medewerker van Impulso Co. werkt 24/7, maakt geen fouten en kost een fractie van een menselijke FTE. Multi-agent AI die taken overneemt in HR, finance, operations en klantenservice. Amsterdam.",
   keywords:
     "digitale medewerker, AI medewerker, virtuele medewerker, AI automatisering bedrijf, digitale collega, AI agent HR, AI finance automatisering, klantenservice automatisering, operations AI, multi-agent systeem, AI bureau Amsterdam",
   pathname: "/diensten/digitale-medewerker",
@@ -214,7 +214,7 @@ export default function DigitaleMedewerkerPage() {
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
               Een digitale medewerker werkt 24/7, maakt geen fouten en kost een
-              fractie van een menselijke FTE. Virelio implementeert multi-agent
+              fractie van een menselijke FTE. Impulso Co. implementeert multi-agent
               systemen die een volledige rol vervullen binnen uw organisatie.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -463,7 +463,7 @@ export default function DigitaleMedewerkerPage() {
               </a>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Virelio — AI Agent Bureau · Amsterdam ·{" "}
+              Impulso Co. — AI Agent Bureau · Amsterdam ·{" "}
               <a
                 href="tel:+31687838713"
                 className="hover:text-foreground transition-colors"

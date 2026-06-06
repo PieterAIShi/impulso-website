@@ -82,7 +82,7 @@ export default function WhyVirelio() {
             viewport={{ once: true }}
             className="text-sm font-medium text-primary uppercase tracking-widest mb-4"
           >
-            {isNL ? "Waarom Virelio" : "Why Virelio"}
+            {isNL ? "Waarom Impulso Co." : "Why Impulso Co."}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
