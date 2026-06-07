@@ -197,8 +197,8 @@ export function organizationSchema({
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+31687838713",
-      email: "info@virelio.nl",
+      telephone: "+31640495527",
+      email: "info@impulsoco.nl",
       contactType: "sales",
       availableLanguage: ["nl", "en"],
     },
@@ -480,7 +480,7 @@ export function voiceAIServiceSchema() {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+31687838713",
+        telephone: "+31640495527",
         contactType: "sales",
         availableLanguage: ["nl", "en"]
       }

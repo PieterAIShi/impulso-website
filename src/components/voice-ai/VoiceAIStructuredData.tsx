@@ -146,7 +146,7 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
       ? "Impulso Co. levert geavanceerde AI spraakassistenten voor bedrijven in Nederland. Automatiseer klantgesprekken, verhoog efficiency."
       : "Impulso Co. delivers advanced AI voice assistants for businesses. Automate customer calls, increase efficiency.",
     "url": "https://virelio.nl",
-    "telephone": "+31687838713",
+    "telephone": "+31640495527",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Amsterdam",

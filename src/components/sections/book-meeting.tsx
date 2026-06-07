@@ -127,7 +127,7 @@ export default function BookMeeting() {
 
             {/* Gmail */}
             <motion.a
-              href="mailto:info@virelio.nl"
+              href="mailto:info@impulsoco.nl"
               variants={itemVariants}
               whileHover={{ y: -4 }}
               className="group"
@@ -140,7 +140,7 @@ export default function BookMeeting() {
                   Email
                 </h3>
                 <p className="text-sm text-muted-foreground text-center mb-4">
-                  info@virelio.nl
+                  info@impulsoco.nl
                 </p>
                 <Button
                   variant="outline"
@@ -153,7 +153,7 @@ export default function BookMeeting() {
 
             {/* WhatsApp */}
             <motion.a
-              href="https://wa.me/31687838713"
+              href="https://wa.me/31640495527"
               target="_blank"
               rel="noopener noreferrer"
               variants={itemVariants}
@@ -168,7 +168,7 @@ export default function BookMeeting() {
                   WhatsApp
                 </h3>
                 <p className="text-sm text-muted-foreground text-center mb-4">
-                  +31687838713
+                  +31640495527
                 </p>
                 <Button
                   variant="outline"
@@ -187,7 +187,7 @@ export default function BookMeeting() {
           >
             {language === "nl" ? "Of bel direct: " : "Or call directly: "}
             <a
-              href="tel:+31687838713"
+              href="tel:+31640495527"
               className="font-medium text-foreground hover:text-primary transition-colors"
             >
               06-4044 6732

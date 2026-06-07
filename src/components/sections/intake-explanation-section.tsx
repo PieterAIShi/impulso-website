@@ -171,15 +171,15 @@ export default function IntakeExplanationSection() {
                                 exit={{ opacity: 0, height: 0 }}
                                 className="bg-background p-4 space-y-1 border border-foreground/15"
                             >
-                                <a href="tel:+31687838713" className="flex items-center gap-3 p-3 hover:bg-foreground/5 transition-colors">
+                                <a href="tel:+31640495527" className="flex items-center gap-3 p-3 hover:bg-foreground/5 transition-colors">
                                     <Phone className="h-4 w-4 text-foreground flex-shrink-0" strokeWidth={1.5} />
-                                    <span className="text-foreground font-medium text-sm">+31 6 8783 8713</span>
+                                    <span className="text-foreground font-medium text-sm">+31 6 40 49 55 27</span>
                                 </a>
-                                <a href="mailto:info@virelio.nl" className="flex items-center gap-3 p-3 hover:bg-foreground/5 transition-colors">
+                                <a href="mailto:info@impulsoco.nl" className="flex items-center gap-3 p-3 hover:bg-foreground/5 transition-colors">
                                     <Mail className="h-4 w-4 text-foreground flex-shrink-0" strokeWidth={1.5} />
-                                    <span className="text-foreground font-medium text-sm">info@virelio.nl</span>
+                                    <span className="text-foreground font-medium text-sm">info@impulsoco.nl</span>
                                 </a>
-                                <a href="https://wa.me/31687838713" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 hover:bg-foreground/5 transition-colors">
+                                <a href="https://wa.me/31640495527" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 hover:bg-foreground/5 transition-colors">
                                     <MessageCircle className="h-4 w-4 text-foreground flex-shrink-0" strokeWidth={1.5} />
                                     <span className="text-foreground font-medium text-sm">WhatsApp</span>
                                 </a>

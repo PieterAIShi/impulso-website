@@ -123,16 +123,16 @@ export default function WorkshopCTA() {
               <p>Contact us directly:</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="mailto:info@virelio.nl"
+                  href="mailto:info@impulsoco.nl"
                   className="hover:text-primary transition-colors"
                 >
-                  info@virelio.nl
+                  info@impulsoco.nl
                 </a>
                 <a
-                  href="tel:+31687838713"
+                  href="tel:+31640495527"
                   className="hover:text-primary transition-colors"
                 >
-                  +31687838713
+                  +31640495527
                 </a>
               </div>
             </div>

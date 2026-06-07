@@ -207,7 +207,7 @@ export default function AIAgentBouwenPage() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="mailto:info@virelio.nl"
+                href="mailto:info@impulsoco.nl"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/60 bg-background px-7 py-3.5 text-sm font-medium text-foreground transition-all hover:bg-muted/40 active:scale-[0.98]"
               >
                 Stel een vraag
@@ -528,7 +528,7 @@ export default function AIAgentBouwenPage() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="mailto:info@virelio.nl"
+                href="mailto:info@impulsoco.nl"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/60 bg-background px-8 py-4 text-sm font-medium text-foreground transition-all hover:bg-muted/40 active:scale-[0.98]"
               >
                 Mail ons direct
@@ -537,10 +537,10 @@ export default function AIAgentBouwenPage() {
             <p className="mt-5 text-xs text-muted-foreground">
               Impulso Co. — AI Agent Bureau · Amsterdam ·{" "}
               <a
-                href="tel:+31687838713"
+                href="tel:+31640495527"
                 className="hover:text-foreground transition-colors"
               >
-                +31 6 87838713
+                +31 6 40 49 55 27
               </a>
             </p>
           </div>

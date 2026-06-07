@@ -282,14 +282,14 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                 {/* Contact row */}
                 <div className="flex gap-3">
                   <a
-                    href={`tel:${t.contact?.phoneNumber?.replace(/\s+/g, '') || '+31687838713'}`}
+                    href={`tel:${t.contact?.phoneNumber?.replace(/\s+/g, '') || '+31640495527'}`}
                     className="flex-1 flex items-center justify-center gap-2 py-3.5 border border-foreground/30 text-sm font-medium text-foreground/70 active:bg-foreground/5 transition-colors"
                   >
                     <Phone className="h-4 w-4" />
                     {language === "nl" ? "Bel ons" : "Call us"}
                   </a>
                   <a
-                    href={`mailto:${t.contact?.emailAddress || 'info@virelio.nl'}`}
+                    href={`mailto:${t.contact?.emailAddress || 'info@impulsoco.nl'}`}
                     className="flex-1 flex items-center justify-center gap-2 py-3.5 border border-foreground/30 text-sm font-medium text-foreground/70 active:bg-foreground/5 transition-colors"
                   >
                     <Mail className="h-4 w-4" />

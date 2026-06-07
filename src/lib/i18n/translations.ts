@@ -7,7 +7,7 @@ export const translations = {
         tagline: "Stem AI Operaties voor Ondernemingen",
       },
       contact: {
-        email: "hallo@virelio.ai",
+        email: "info@impulsoco.nl",
         phone: "+31 (0)20 123-4567",
         address: "Amsterdam, Nederland",
       },
@@ -432,8 +432,8 @@ export const translations = {
       phone: "Telefoon",
       location: "Locatie",
       followUs: "WhatsApp direct",
-      emailAddress: "info@virelio.nl",
-      phoneNumber: "+31 6 8783 8713",
+      emailAddress: "info@impulsoco.nl",
+      phoneNumber: "+31 6 40 49 55 27",
       locationText: "Amsterdam, Nederland",
     },
 
@@ -839,7 +839,7 @@ export const translations = {
         tagline: "Voice AI Operations for Enterprise",
       },
       contact: {
-        email: "hello@virelio.ai",
+        email: "info@impulsoco.nl",
         phone: "+1 (555) 123-4567",
         address: "San Francisco, CA",
       },
@@ -1261,8 +1261,8 @@ export const translations = {
       phone: "Phone",
       location: "Location",
       followUs: "Chat with us now",
-      emailAddress: "info@virelio.nl",
-      phoneNumber: "+31 6 8783 8713",
+      emailAddress: "info@impulsoco.nl",
+      phoneNumber: "+31 6 40 49 55 27",
       locationText: "Amsterdam, The Netherlands",
     },
 

@@ -19,8 +19,8 @@ export const siteConfig = {
     linkedin: "https://linkedin.com/company/impulsoco",
   },
   contact: {
-    email: "info@virelio.nl",
-    phone: "+31687838713",
+    email: "info@impulsoco.nl",
+    phone: "+31640495527",
     address: "Amsterdam, Netherlands",
   },
   themeColor: "#ffffff",
