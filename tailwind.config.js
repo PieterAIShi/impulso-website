@@ -16,7 +16,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'Bodoni MT', 'Didot', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
+        sans: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        serif: ['var(--font-display)', 'Bodoni MT', 'Didot', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
+        display: ['var(--font-display)', 'Bodoni MT', 'Didot', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
       },
       fontSize: {
         // Apple-like text sizes

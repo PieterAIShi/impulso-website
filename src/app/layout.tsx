@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bodoni_Moda } from "next/font/google";
+import { Inter, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { LanguageProvider } from "@/lib/i18n/language-context";
@@ -11,11 +11,19 @@ import { siteConfig } from "@/lib/config";
 import dynamic from 'next/dynamic';
 import GoogleAnalytics from "@/components/seo/google-analytics";
 
-// Bodoni Moda — elegant serif used across the whole site.
+// Inter — body / UI text
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+// Bodoni Moda — display serif used for all headings (h1–h6).
 // Note: Bodoni Moda only ships weights 400–900 (no light weights).
 const bodoni = Bodoni_Moda({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-display",
   weight: ["400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
   display: "swap",
@@ -162,7 +170,7 @@ export default function RootLayout({
         <JsonLd data={websiteSchema()} />
         <GoogleAnalytics />
       </head>
-      <body className={`${bodoni.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${bodoni.variable} font-sans antialiased`}>
         <ThemeProvider>
           <LanguageProvider>
             <BackgroundEffect />
