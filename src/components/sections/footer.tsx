@@ -13,9 +13,9 @@ export default function Footer() {
   const isWorkshopPage = typeof window !== "undefined" && window.location.pathname.includes("/workshop");
 
   return (
-    <footer className="bg-background border-t border-border/50 py-16 sm:py-20">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10">
+    <footer className="bg-background border-t border-foreground/15 py-20 sm:py-24">
+      <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <motion.div
@@ -26,18 +26,18 @@ export default function Footer() {
             >
               <a
                 href="/"
-                className="inline-block hover:opacity-80 transition"
+                className="inline-block hover:opacity-70 transition-opacity"
                 onClick={(e) => {
                   e.preventDefault();
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                <span className="flex items-center gap-2.5 text-2xl font-black tracking-tight">
-                  <img src="/favicon-96x96.png" alt="Impulso Co. logo" className="h-8 w-8 rounded-lg" />
-                  Impulso Co.<span className="text-primary">.</span>
+                <span className="flex items-center gap-2.5 text-xl font-medium tracking-tight">
+                  <img src="/favicon-96x96.png" alt="Impulso Co. logo" className="h-7 w-7" />
+                  Impulso Co.
                 </span>
               </a>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-full sm:max-w-md leading-relaxed">
+              <p className="text-sm text-muted-foreground font-light max-w-full sm:max-w-md leading-relaxed">
                 {language === "nl"
                   ? "AI-oplossingen op maat. Kennisbanken, AI Agents en Automatiseringen. Van idee tot live in 2 weken."
                   : "Custom AI solutions. Knowledge bases, AI Agents, and Automations. From idea to live in 2 weeks."}
@@ -47,7 +47,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-widest text-foreground mb-5">
+            <h4 className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-5">
               {t.footer.quickLinks}
             </h4>
             <ul className="space-y-3">
@@ -61,7 +61,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href.startsWith("#") ? "/" + link.href : link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground font-light hover:text-foreground transition-colors"
                     onClick={(e) => {
                       e.preventDefault();
                       if (window.location.pathname !== "/" && window.location.pathname !== "/en" && window.location.pathname !== "/en/") {
@@ -87,7 +87,7 @@ export default function Footer() {
 
           {/* Diensten */}
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-widest text-foreground mb-5">
+            <h4 className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-5">
               {language === "nl" ? "Diensten" : "Services"}
             </h4>
             <ul className="space-y-3">
@@ -99,7 +99,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground font-light hover:text-foreground transition-colors"
                   >
                     {link.name}
                   </a>
@@ -110,7 +110,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-widest text-foreground mb-5">
+            <h4 className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-5">
               {language === "nl" ? "Kennisbank" : "Resources"}
             </h4>
             <ul className="space-y-3">
@@ -122,7 +122,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground font-light hover:text-foreground transition-colors"
                   >
                     {link.name}
                   </a>
@@ -133,7 +133,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-widest text-foreground mb-5">
+            <h4 className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-5">
               {t.footer.legal}
             </h4>
             <ul className="space-y-3">
@@ -147,7 +147,7 @@ export default function Footer() {
                   {link.name === t.footer.sitemap ? (
                     <a
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      className="text-sm text-muted-foreground font-light hover:text-foreground transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -156,7 +156,7 @@ export default function Footer() {
                   ) : (
                     <HashLink
                       to={link.href}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      className="text-sm text-muted-foreground font-light hover:text-foreground transition-colors"
                     >
                       {link.name}
                     </HashLink>
@@ -169,7 +169,7 @@ export default function Footer() {
 
         {/* Workshop: What happens next? (collapsible) */}
         {isWorkshopPage && (
-          <div className="border-t border-border/50 mt-12 pt-8">
+          <div className="border-t border-foreground/15 mt-12 pt-8">
             <div className="max-w-xl mx-auto bg-muted/50 rounded-lg overflow-hidden">
               <button
                 type="button"
@@ -206,7 +206,7 @@ export default function Footer() {
         )}
 
         {/* Bottom */}
-        <div className="border-t border-border/50 mt-16 pt-8">
+        <div className="border-t border-foreground/15 mt-16 pt-8">
           <p className="text-xs text-muted-foreground text-center">
             &copy; {new Date().getFullYear()} Impulso Co. {t.footer.rights}
           </p>

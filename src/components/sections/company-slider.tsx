@@ -18,13 +18,13 @@ const CompanySlider = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 overflow-hidden" id="trusted-partners">
-      <div className="container mx-auto px-4">
+    <section className="py-20 sm:py-24 overflow-hidden border-t border-foreground/10" id="trusted-partners">
+      <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest mb-12"
+          className="text-xs sm:text-sm text-muted-foreground uppercase tracking-[0.2em] mb-12"
         >
           {language === "nl" ? "Zij gingen je voor" : "Trusted by industry leaders"}
         </motion.p>

@@ -2,7 +2,6 @@
 
 import React, { useMemo } from "react";
 import { motion } from "framer-motion";
-import { Award } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 interface Certification {
@@ -205,22 +204,22 @@ function shuffleArray<T>(arr: T[]): T[] {
 function CertCard({ cert }: { cert: Certification }) {
   return (
     <div className="w-[260px] sm:w-[280px] flex-shrink-0">
-      <div className="h-full p-5 rounded-2xl border border-border/50 bg-background hover:border-primary/20 transition-all duration-300">
-        <div className="flex items-start justify-between mb-3">
-          <div className={`w-10 h-10 rounded-xl ${cert.color} border border-border/30 flex items-center justify-center`}>
+      <div className="h-full p-6 border border-foreground/15 bg-background">
+        <div className="flex items-start justify-between mb-4">
+          <div className={`w-10 h-10 ${cert.color} border border-foreground/10 flex items-center justify-center`}>
             {cert.logo}
           </div>
           <span className="text-[11px] text-muted-foreground">{cert.date}</span>
         </div>
-        <p className="text-[11px] text-muted-foreground mb-1">{cert.issuer}</p>
-        <h4 className="text-[13px] font-semibold text-foreground leading-snug mb-3 min-h-[36px] line-clamp-2">
+        <p className="text-[11px] uppercase tracking-[0.12em] text-muted-foreground mb-1.5">{cert.issuer}</p>
+        <h4 className="text-[13px] font-medium text-foreground leading-snug mb-4 min-h-[36px] line-clamp-2">
           {cert.title}
         </h4>
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-1.5">
           {cert.skills.map((skill, i) => (
             <span
               key={i}
-              className="px-2 py-0.5 rounded-md bg-muted/50 text-[9px] text-muted-foreground"
+              className="px-2 py-0.5 border border-foreground/15 text-[9px] text-muted-foreground"
             >
               {skill}
             </span>
@@ -237,27 +236,24 @@ export default function Certifications() {
   const shuffledCerts = useMemo(() => shuffleArray(certifications), []);
 
   return (
-    <section className="py-16 sm:py-20 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+    <section className="py-20 sm:py-24 overflow-hidden border-t border-foreground/10">
+      <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         {/* Header */}
-        <div className="text-center mb-10">
-          <motion.div
+        <div className="mb-12">
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-2 mb-3"
+            className="text-xs sm:text-sm text-muted-foreground uppercase tracking-[0.2em] mb-6"
           >
-            <Award className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary uppercase tracking-widest">
-              {isNL ? "Certificeringen" : "Certifications"}
-            </span>
-          </motion.div>
+            {isNL ? "Certificeringen" : "Certifications"}
+          </motion.p>
           <motion.h3
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.05 }}
-            className="text-2xl sm:text-3xl font-bold tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[1.05]"
           >
             {isNL
               ? "Gecertificeerd door de beste"

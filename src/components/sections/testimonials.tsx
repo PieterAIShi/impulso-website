@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 interface Testimonial {
@@ -106,19 +106,9 @@ function TestimonialCard({
   language: string;
 }) {
   return (
-    <div className="h-full flex flex-col p-6 sm:p-8 rounded-2xl border border-border/50 bg-background hover:border-primary/20 transition-all duration-300 group">
-      {/* Stars */}
-      <div className="flex gap-0.5 mb-5">
-        {Array.from({ length: testimonial.rating }).map((_, i) => (
-          <Star
-            key={i}
-            className="w-4 h-4 fill-amber-400 text-amber-400"
-          />
-        ))}
-      </div>
-
+    <div className="h-full flex flex-col p-8 sm:p-10 border border-foreground/15 bg-background">
       {/* Quote */}
-      <blockquote className="flex-1 text-[15px] text-foreground/80 leading-relaxed mb-6">
+      <blockquote className="flex-1 text-base sm:text-lg text-foreground/80 font-light leading-relaxed mb-8">
         &ldquo;
         {language === "nl"
           ? testimonial.content.nl
@@ -127,17 +117,17 @@ function TestimonialCard({
       </blockquote>
 
       {/* Author */}
-      <div className="flex items-center gap-3 pt-5 border-t border-border/40">
+      <div className="flex items-center gap-3 pt-6 border-t border-foreground/15">
         <img
           src={testimonial.image}
           alt={testimonial.name}
-          className="w-10 h-10 rounded-full object-cover ring-2 ring-border/50"
+          className="w-10 h-10 rounded-full object-cover grayscale"
           onError={(e) => {
             e.currentTarget.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%236b7280' font-family='Arial' font-size='16' font-weight='600'%3E${testimonial.name.charAt(0)}%3C/text%3E%3C/svg%3E`;
           }}
         />
         <div>
-          <div className="font-semibold text-sm text-foreground">
+          <div className="font-medium text-sm text-foreground">
             {testimonial.name}
           </div>
           <div className="text-xs text-muted-foreground">
@@ -184,10 +174,10 @@ export default function Testimonials() {
 
   return (
     <section
-      className="py-20 sm:py-28 md:py-32 bg-background overflow-hidden"
+      className="py-24 sm:py-32 bg-background overflow-hidden border-t border-foreground/10"
       id="testimonials"
     >
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+      <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 sm:mb-16">
           <div>
@@ -195,12 +185,12 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-sm font-medium text-primary uppercase tracking-widest mb-4"
+              className="text-xs sm:text-sm text-muted-foreground uppercase tracking-[0.2em] mb-8"
             >
               {language === "nl" ? "Wat ze zeggen" : "What they say"}
             </motion.p>
             <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.05]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -215,21 +205,21 @@ export default function Testimonials() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="hidden sm:flex items-center gap-2"
+            className="hidden sm:flex items-center gap-3"
           >
             <button
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
-              className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-muted transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+              className="w-11 h-11 border border-foreground/30 flex items-center justify-center hover:border-foreground transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-4 h-4" strokeWidth={1.5} />
             </button>
             <button
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
-              className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-muted transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+              className="w-11 h-11 border border-foreground/30 flex items-center justify-center hover:border-foreground transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-4 h-4" strokeWidth={1.5} />
             </button>
           </motion.div>
         </div>
@@ -271,16 +261,16 @@ export default function Testimonials() {
           <button
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
-            className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-muted transition-colors disabled:opacity-20"
+            className="w-10 h-10 border border-foreground/30 flex items-center justify-center hover:border-foreground transition-colors disabled:opacity-20"
           >
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="w-4 h-4" strokeWidth={1.5} />
           </button>
           <button
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
-            className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-muted transition-colors disabled:opacity-20"
+            className="w-10 h-10 border border-foreground/30 flex items-center justify-center hover:border-foreground transition-colors disabled:opacity-20"
           >
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4" strokeWidth={1.5} />
           </button>
         </div>
 
@@ -305,15 +295,7 @@ export default function Testimonials() {
                 />
               ))}
             </div>
-            <div className="flex gap-0.5 ml-2">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star
-                  key={i}
-                  className="w-3.5 h-3.5 fill-amber-400 text-amber-400"
-                />
-              ))}
-            </div>
-            <span className="text-sm font-semibold text-foreground ml-1">
+            <span className="text-sm font-medium text-foreground ml-3">
               5.0
             </span>
           </div>

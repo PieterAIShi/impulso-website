@@ -11,7 +11,6 @@ import {
   BookOpen,
   ArrowRight,
   X,
-  Zap,
   Plug,
   MessageSquare,
   Search,
@@ -48,7 +47,6 @@ import {
   Fingerprint,
   CircleDollarSign,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 interface Agent {
   name: string;
@@ -984,7 +982,7 @@ function CategoryDetail({
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 60, scale: 0.97 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="relative w-full sm:max-w-3xl max-h-[92vh] sm:max-h-[88vh] overflow-y-auto bg-background rounded-t-[2rem] sm:rounded-[2rem] shadow-2xl scrollbar-hide"
+        className="relative w-full sm:max-w-3xl max-h-[92vh] sm:max-h-[88vh] overflow-y-auto bg-background rounded-t-2xl sm:rounded-none shadow-2xl scrollbar-hide"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Drag handle (mobile) */}
@@ -992,60 +990,46 @@ function CategoryDetail({
           <div className="w-10 h-1 rounded-full bg-muted-foreground/20" />
         </div>
 
-        {/* Compact gradient header with floating close */}
-        <div className={`relative px-5 sm:px-8 pt-5 sm:pt-7 pb-20 bg-gradient-to-br ${category.gradient} overflow-hidden`}>
-          {/* Decorative shapes */}
-          <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/[0.04] -translate-y-1/2 translate-x-1/3" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-white/[0.06] translate-y-1/2 -translate-x-1/4" />
-          <div className="absolute top-1/2 right-1/4 w-2 h-2 rounded-full bg-white/20" />
-          <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 rounded-full bg-white/15" />
-
+        {/* Solid header with floating close */}
+        <div className="relative px-5 sm:px-8 pt-6 sm:pt-8 pb-8 bg-foreground">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all hover:scale-105 active:scale-95"
+            className="absolute top-4 right-4 p-2.5 bg-background/10 hover:bg-background/20 transition-colors"
           >
-            <X className="w-4 h-4 text-white" />
+            <X className="w-4 h-4 text-background" />
           </button>
 
           <div className="relative flex items-center gap-4">
-            <motion.div
-              initial={{ rotate: -10, scale: 0.8 }}
-              animate={{ rotate: 0, scale: 1 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center shadow-lg"
-            >
-              <CategoryIcon className="w-7 h-7 text-white" />
-            </motion.div>
+            <div className="w-14 h-14 border border-background/20 flex items-center justify-center">
+              <CategoryIcon className="w-7 h-7 text-background" strokeWidth={1.5} />
+            </div>
             <div>
-              <h3 className="text-2xl font-bold text-white">
+              <h3 className="text-2xl font-medium tracking-tight text-background">
                 {category.title}
               </h3>
-              <p className="text-white/60 text-sm">{category.subtitle}</p>
+              <p className="text-background/60 text-sm">{category.subtitle}</p>
             </div>
           </div>
         </div>
 
         {/* Agent selector */}
-        <div className="px-5 sm:px-8 -mt-10 mb-6 relative z-10">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        <div className="px-5 sm:px-8 mt-6 mb-6 relative z-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 border-t border-l border-foreground/15">
             {category.agents.map((a, i) => {
               const AgentIcon = a.icon;
               return (
-                <motion.button
+                <button
                   key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.05 }}
                   onClick={() => setActiveAgent(i)}
-                  className={`flex flex-col items-center gap-1.5 px-3 py-3 rounded-2xl text-xs font-medium transition-all duration-300 ${
+                  className={`flex flex-col items-center gap-1.5 px-3 py-4 text-xs font-medium border-r border-b border-foreground/15 transition-colors duration-200 ${
                     activeAgent === i
-                      ? `bg-gradient-to-br ${category.gradient} text-white shadow-lg scale-[1.02]`
-                      : "bg-background text-muted-foreground hover:text-foreground shadow-md hover:shadow-lg"
+                      ? "bg-foreground text-background"
+                      : "bg-background text-muted-foreground hover:text-foreground hover:bg-foreground/[0.03]"
                   }`}
                 >
-                  <AgentIcon className="w-5 h-5" />
+                  <AgentIcon className="w-5 h-5" strokeWidth={1.5} />
                   <span className="text-center leading-tight">{a.name}</span>
-                </motion.button>
+                </button>
               );
             })}
           </div>
@@ -1064,32 +1048,29 @@ function CategoryDetail({
             >
               {/* Headline + description */}
               <div>
-                <h4 className="text-xl font-bold text-foreground mb-2">
+                <h4 className="text-xl font-medium tracking-tight text-foreground mb-2">
                   {agent.headline}
                 </h4>
-                <p className="text-sm text-foreground/55 leading-relaxed">
+                <p className="text-sm text-foreground/55 font-light leading-relaxed">
                   {agent.description}
                 </p>
               </div>
 
-              {/* Results as horizontal scroll cards */}
-              <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-1">
+              {/* Results — hairline cells */}
+              <div className="flex border-t border-l border-foreground/15">
                 {agent.results.map((r, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.1 + i * 0.08 }}
-                    className={`shrink-0 flex-1 min-w-[100px] text-center p-4 rounded-2xl bg-gradient-to-br ${category.gradient} relative overflow-hidden`}
+                    className="flex-1 min-w-[100px] p-4 border-r border-b border-foreground/15"
                   >
-                    <div className="absolute inset-0 bg-background/90" />
-                    <div className="relative">
-                      <div className="text-2xl font-bold text-foreground">
-                        {r.value}
-                      </div>
-                      <div className="text-[9px] text-muted-foreground uppercase tracking-wider mt-1 font-medium">
-                        {r.label}
-                      </div>
+                    <div className="text-2xl font-medium text-foreground">
+                      {r.value}
+                    </div>
+                    <div className="text-[9px] text-muted-foreground uppercase tracking-wider mt-1">
+                      {r.label}
                     </div>
                   </motion.div>
                 ))}
@@ -1098,8 +1079,8 @@ function CategoryDetail({
               <div className="grid sm:grid-cols-2 gap-5">
                 {/* Left: Integrations */}
                 <div>
-                  <h5 className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                    <Plug className="w-3 h-3" />
+                  <h5 className="text-[10px] text-muted-foreground uppercase tracking-[0.15em] mb-3 flex items-center gap-1.5">
+                    <Plug className="w-3 h-3" strokeWidth={1.5} />
                     {isNL ? "Werkt met" : "Works with"}
                   </h5>
                   <div className="flex flex-wrap gap-2">
@@ -1109,7 +1090,7 @@ function CategoryDetail({
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2 + i * 0.04 }}
-                        className="px-3 py-1.5 rounded-lg bg-muted/30 text-xs text-foreground/60 font-medium"
+                        className="px-3 py-1.5 border border-foreground/15 text-xs text-foreground/60"
                       >
                         {int}
                       </motion.span>
@@ -1127,18 +1108,16 @@ function CategoryDetail({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <Button
-                  className={`w-full rounded-2xl py-6 text-base font-semibold group relative overflow-hidden bg-gradient-to-r ${category.gradient} text-white hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] transition-all duration-300`}
+                <button
+                  className="group w-full flex items-center justify-center gap-2 h-12 bg-foreground text-background text-sm font-medium hover:bg-foreground/85 transition-colors"
                   onClick={() => {
                     onClose();
                     scrollToSection("ready-to-start");
                   }}
                 >
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    {isNL ? "Bespreek deze agent" : "Discuss this agent"}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Button>
+                  {isNL ? "Bespreek deze agent" : "Discuss this agent"}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
               </motion.div>
             </motion.div>
           </AnimatePresence>
@@ -1159,35 +1138,31 @@ const Services = () => {
   const totalAgents = categories.reduce((acc, c) => acc + c.agents.length, 0);
 
   return (
-    <section id="services" className="py-20 sm:py-28 md:py-32 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+    <section id="services" className="py-24 sm:py-32 overflow-hidden border-t border-foreground/10">
+      <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         {/* Header */}
         <motion.div
-          className="text-center mb-16 sm:mb-20"
+          className="mb-16 sm:mb-20 max-w-3xl"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-4">
+          <p className="text-xs sm:text-sm text-muted-foreground uppercase tracking-[0.2em] mb-8">
             {isNL ? `${totalAgents} digitale medewerkers` : `${totalAgents} digital employees`}
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            {isNL ? (
-              <>Welke agent past <span className="text-primary">bij jou</span>?</>
-            ) : (
-              <>Which agent fits <span className="text-primary">your team</span>?</>
-            )}
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.05] mb-6">
+            {isNL ? "Welke agent past bij jou?" : "Which agent fits your team?"}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground font-light leading-relaxed">
             {isNL
               ? "Kies een categorie en ontdek wat onze agents voor je kunnen doen"
               : "Choose a category and discover what our agents can do for you"}
           </p>
         </motion.div>
 
-        {/* Category cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Category cards — hairline cells, monochrome */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-foreground/15">
           {categories.map((cat, i) => {
             const CatIcon = cat.icon;
             return (
@@ -1198,65 +1173,29 @@ const Services = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06, duration: 0.4, ease: "easeOut" }}
                 onClick={() => setSelectedCategory(cat)}
-                className="text-left group relative overflow-hidden rounded-3xl active:scale-[0.97] transition-transform duration-200"
+                className="text-left group relative p-8 sm:p-10 border-r border-b border-foreground/15 hover:bg-foreground/[0.02] transition-colors duration-300"
               >
-                {/* Gradient border that's always subtly visible */}
-                <div className={`absolute -inset-[1px] rounded-3xl bg-gradient-to-br ${cat.gradient} opacity-20 group-hover:opacity-100 transition-opacity duration-500`} />
-                <div className="absolute inset-[1px] rounded-[22px] bg-background z-[1]" />
-
-                {/* Large gradient wash across the card */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${cat.gradient} opacity-[0.04] group-hover:opacity-[0.1] transition-opacity duration-500 z-[2]`} />
-
-                {/* Floating orb - bigger and brighter */}
-                <div className={`absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gradient-to-br ${cat.gradient} opacity-[0.12] group-hover:opacity-[0.22] group-hover:scale-110 transition-all duration-700 blur-3xl z-[2]`} />
-
-                <div className="relative z-[3] p-6 sm:p-7">
-                  {/* Icon + explore CTA */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="relative">
-                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.gradient} flex items-center justify-center shadow-lg group-hover:rotate-3 group-hover:scale-110 transition-all duration-500`}>
-                        <CatIcon className="w-7 h-7 text-white" />
-                      </div>
-                      <motion.div
-                        className={`absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-gradient-to-br ${cat.gradient} ring-2 ring-background`}
-                        animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                      />
-                    </div>
-                    <div className="flex items-center gap-1.5 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                      <span className="text-xs font-medium text-foreground/60">{isNL ? "Ontdek" : "Explore"}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-foreground/60" />
-                    </div>
-                  </div>
-
-                  {/* Title & subtitle */}
-                  <h3 className="text-lg font-bold text-foreground mb-1">
-                    {cat.title}
-                  </h3>
-                  <p className="text-[13px] text-muted-foreground mb-5 leading-relaxed">
-                    {cat.subtitle}
-                  </p>
-
-                  {/* Agent avatars with unique icons */}
-                  <div className="flex items-center gap-3">
-                    <div className="flex -space-x-2">
-                      {cat.agents.map((a, ai) => {
-                        const AgentIcon = a.icon;
-                        return (
-                          <div
-                            key={ai}
-                            className={`w-7 h-7 rounded-full bg-gradient-to-br ${cat.gradient} flex items-center justify-center ring-2 ring-background`}
-                          >
-                            <AgentIcon className="w-3 h-3 text-white" />
-                          </div>
-                        );
-                      })}
-                    </div>
-                    <span className="text-[11px] text-muted-foreground font-medium">
-                      {cat.agents.length} agents
-                    </span>
+                {/* Icon + explore CTA */}
+                <div className="flex items-center justify-between mb-6">
+                  <CatIcon className="w-6 h-6 text-foreground" strokeWidth={1.5} />
+                  <div className="flex items-center gap-1.5 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                    <span className="text-xs text-muted-foreground">{isNL ? "Ontdek" : "Explore"}</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-muted-foreground" />
                   </div>
                 </div>
+
+                {/* Title & subtitle */}
+                <h3 className="text-lg font-medium tracking-tight text-foreground mb-2">
+                  {cat.title}
+                </h3>
+                <p className="text-[13px] text-muted-foreground font-light mb-6 leading-relaxed">
+                  {cat.subtitle}
+                </p>
+
+                {/* Agent count */}
+                <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                  {cat.agents.length} agents
+                </span>
               </motion.button>
             );
           })}
@@ -1268,28 +1207,27 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="mt-8 rounded-2xl border border-dashed border-primary/30 bg-primary/[0.02] p-8 sm:p-10 text-center"
+          className="mt-12 border border-foreground/15 bg-muted/30 dark:bg-muted/10 p-10 sm:p-14 flex flex-col lg:flex-row lg:items-center gap-8"
         >
-          <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-            <Zap className="w-6 h-6 text-primary" />
+          <div className="lg:flex-1">
+            <h3 className="text-2xl sm:text-3xl font-medium tracking-tight text-foreground mb-3">
+              {isNL
+                ? "Niet gevonden wat je zoekt?"
+                : "Didn't find what you need?"}
+            </h3>
+            <p className="text-sm sm:text-base text-muted-foreground font-light max-w-xl leading-relaxed">
+              {isNL
+                ? "Geen probleem. Wij bouwen agents volledig op maat — afgestemd op jouw processen, systemen en wensen. Vertel ons wat je nodig hebt."
+                : "No problem. We build fully custom agents — tailored to your processes, systems and needs. Tell us what you're looking for."}
+            </p>
           </div>
-          <h3 className="text-xl font-bold text-foreground mb-2">
-            {isNL
-              ? "Niet gevonden wat je zoekt?"
-              : "Didn't find what you need?"}
-          </h3>
-          <p className="text-sm text-muted-foreground max-w-md mx-auto mb-6">
-            {isNL
-              ? "Geen probleem. Wij bouwen agents volledig op maat — afgestemd op jouw processen, systemen en wensen. Vertel ons wat je nodig hebt."
-              : "No problem. We build fully custom agents — tailored to your processes, systems and needs. Tell us what you're looking for."}
-          </p>
-          <Button
-            className="bg-foreground text-background hover:bg-foreground/90 rounded-xl px-8 py-5 text-base font-semibold group"
+          <button
+            className="group inline-flex items-center justify-center gap-2 h-12 px-10 bg-foreground text-background text-sm font-medium hover:bg-foreground/85 transition-colors shrink-0"
             onClick={() => scrollToSection("ready-to-start")}
           >
             {isNL ? "Bespreek jouw custom agent" : "Discuss your custom agent"}
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
         </motion.div>
       </div>
 

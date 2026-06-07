@@ -72,15 +72,15 @@ export default function WhyVirelio() {
   const reasons = getReasons(language);
 
   return (
-    <section className="py-20 sm:py-28 md:py-32 bg-muted/20 dark:bg-muted/5">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+    <section className="py-24 sm:py-32 bg-background border-t border-foreground/10">
+      <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         {/* Header */}
-        <div className="text-center mb-16 sm:mb-20">
+        <div className="mb-16 sm:mb-20 max-w-3xl">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-medium text-primary uppercase tracking-widest mb-4"
+            className="text-xs sm:text-sm text-muted-foreground uppercase tracking-[0.2em] mb-8"
           >
             {isNL ? "Waarom Impulso Co." : "Why Impulso Co."}
           </motion.p>
@@ -89,26 +89,16 @@ export default function WhyVirelio() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.05 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.05] text-foreground mb-6"
           >
-            {isNL ? (
-              <>
-                Gebouwd op{" "}
-                <span className="text-primary">vertrouwen</span>
-              </>
-            ) : (
-              <>
-                Built on{" "}
-                <span className="text-primary">trust</span>
-              </>
-            )}
+            {isNL ? "Gebouwd op vertrouwen" : "Built on trust"}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto"
+            className="text-muted-foreground text-lg sm:text-xl font-light leading-relaxed"
           >
             {isNL
               ? "Geen verrassingen, geen kleine lettertjes. Dit is hoe wij werken."
@@ -116,8 +106,8 @@ export default function WhyVirelio() {
           </motion.p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Grid — hairline cells, no rounding/shadows */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-foreground/15">
           {reasons.map((reason, i) => {
             const ReasonIcon = reason.icon;
             return (
@@ -127,25 +117,21 @@ export default function WhyVirelio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="group p-6 sm:p-8 rounded-2xl border border-border/50 bg-background hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 h-full flex flex-col"
+                className="p-8 sm:p-10 border-r border-b border-foreground/15 h-full flex flex-col"
               >
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                  <ReasonIcon className="w-5 h-5 text-primary" />
-                </div>
+                <ReasonIcon className="w-6 h-6 text-foreground mb-6" strokeWidth={1.5} />
 
-                <h3 className="text-lg font-bold text-foreground mb-2">
+                <h3 className="text-lg font-medium tracking-tight text-foreground mb-3">
                   {reason.title}
                 </h3>
 
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                <p className="text-sm text-muted-foreground font-light leading-relaxed flex-1">
                   {reason.description}
                 </p>
 
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/5 border border-primary/10 mt-5 self-start">
-                  <span className="text-xs font-medium text-primary">
-                    {reason.highlight}
-                  </span>
-                </div>
+                <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground mt-6">
+                  {reason.highlight}
+                </span>
               </motion.div>
             );
           })}
