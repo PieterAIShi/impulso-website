@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { LanguageProvider } from "@/lib/i18n/language-context";
@@ -11,11 +11,13 @@ import { siteConfig } from "@/lib/config";
 import dynamic from 'next/dynamic';
 import GoogleAnalytics from "@/components/seo/google-analytics";
 
-// Using Inter font with configuration to mimic Apple's typography
-const inter = Inter({
+// Bodoni Moda — elegant serif used across the whole site.
+// Note: Bodoni Moda only ships weights 400–900 (no light weights).
+const bodoni = Bodoni_Moda({
   subsets: ["latin"],
   variable: "--font-inter",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -160,7 +162,7 @@ export default function RootLayout({
         <JsonLd data={websiteSchema()} />
         <GoogleAnalytics />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${bodoni.variable} font-sans antialiased`}>
         <ThemeProvider>
           <LanguageProvider>
             <BackgroundEffect />

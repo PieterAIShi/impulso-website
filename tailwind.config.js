@@ -16,7 +16,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Bodoni MT', 'Didot', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
       },
       fontSize: {
         // Apple-like text sizes
