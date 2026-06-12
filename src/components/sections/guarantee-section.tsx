@@ -83,7 +83,7 @@ export default function GuaranteeSection() {
                     {/* Right: guarantees — hairline-separated list */}
                     <div>
                         <motion.p
-                            className="text-xs sm:text-sm text-muted-foreground uppercase tracking-[0.2em] mb-6"
+                            className="text-base sm:text-lg font-semibold text-foreground uppercase tracking-[0.2em] mb-6"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
