@@ -81,7 +81,16 @@ export default function GuaranteeSection() {
                     </div>
 
                     {/* Right: guarantees — hairline-separated list */}
-                    <div className="border-t border-foreground/15">
+                    <div>
+                        <motion.p
+                            className="text-xs sm:text-sm text-muted-foreground uppercase tracking-[0.2em] mb-6"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            {language === 'nl' ? 'Onze belofte' : 'Our promise'}
+                        </motion.p>
+                        <div className="border-t border-foreground/15">
                         {guarantees.map((guarantee, index) => (
                             <motion.div
                                 key={index}
@@ -97,6 +106,7 @@ export default function GuaranteeSection() {
                                 </p>
                             </motion.div>
                         ))}
+                        </div>
                     </div>
                 </div>
             </div>
