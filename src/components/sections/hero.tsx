@@ -66,20 +66,56 @@ function HeroBackdrop() {
         animate={{ x: ["10vw", "60vw", "10vw"], y: ["-5vh", "55vh", "-5vh"] }}
         transition={{ duration: 24, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
-      {/* Fine grid, very subtle */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-          maskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-        }}
-      />
+      {/* Brand "growth lines" — ascending angular zigzags echoing the
+          logo's upward arrow, replacing the old square grid. */}
+      <GrowthLines />
     </div>
+  );
+}
+
+// A field of ascending, angular zigzag lines (like the logo's growth
+// arrow). Deterministic so it renders identically on server and client.
+function GrowthLines() {
+  const W = 1440;
+  const H = 900;
+  const count = 9;
+  const stepX = 190; // spacing between zigzag vertices
+  const amp = 24; // zigzag peak height
+  const rise = 18; // overall upward trend per vertex
+  const vGap = 118; // vertical spacing between lines
+
+  const lines: string[] = [];
+  for (let k = 0; k < count; k++) {
+    const baseY = H + 120 - k * vGap;
+    const pts: string[] = [];
+    let i = 0;
+    for (let x = -160; x <= W + 160; x += stepX) {
+      const zig = i % 2 === 0 ? amp : -amp;
+      pts.push(`${x},${baseY - i * rise + zig}`);
+      i++;
+    }
+    lines.push(pts.join(" "));
+  }
+
+  return (
+    <svg
+      aria-hidden
+      className="absolute inset-0 w-full h-full"
+      viewBox={`0 0 ${W} ${H}`}
+      preserveAspectRatio="xMidYMid slice"
+      style={{
+        maskImage:
+          "radial-gradient(ellipse at center, black 35%, transparent 88%)",
+        WebkitMaskImage:
+          "radial-gradient(ellipse at center, black 35%, transparent 88%)",
+      }}
+    >
+      <g fill="none" stroke={TERRACOTTA} strokeWidth={2} strokeLinejoin="miter">
+        {lines.map((p, i) => (
+          <polyline key={i} points={p} style={{ opacity: 0.08 + i * 0.012 }} />
+        ))}
+      </g>
+    </svg>
   );
 }
 
