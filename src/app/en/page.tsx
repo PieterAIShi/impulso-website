@@ -102,7 +102,7 @@ export default function EnglishHome() {
       <JsonLd data={certificationsSchema()} />
 
       <main className="min-h-screen">
-        <Navbar overHero />
+        <Navbar />
         <Hero />
         <CompanySlider />
         <GuaranteeSection />
