@@ -133,9 +133,11 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
               onClick={(e) => handleNavClick(e, "#")}
               className="flex items-center hover:opacity-70 transition-opacity"
             >
-              <span className="text-lg sm:text-xl font-medium tracking-tight text-foreground">
-                Impulso Co.
-              </span>
+              <img
+                src="/impulso-logo.png"
+                alt="Impulso Co."
+                className="h-11 sm:h-12 w-auto object-contain"
+              />
             </a>
           </div>
 
