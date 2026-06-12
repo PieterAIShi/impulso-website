@@ -7,125 +7,9 @@ import { scrollToSection } from "@/lib/scroll-utils";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 /**
- * Full-bleed, Polestar-style hero: a full-screen visual with the copy
- * overlaid in dark type. The visual is a light, warm backdrop with a
- * subtle terracotta wash drifting diagonally (top-left → bottom-right).
- *
- * The visual is swappable: drop a 3D render / photo at the path below
- * and set HERO_IMAGE to it — the coded backdrop is only the stand-in
- * while HERO_IMAGE is empty.
+ * Polestar-style hero: full viewport, type-led, generous whitespace.
+ * One message, two quiet CTAs, spec-row stats separated by hairlines.
  */
-const HERO_IMAGE = ""; // e.g. "/images/hero/hero.jpg" — leave empty for the coded backdrop
-const TERRACOTTA = "#B4442A";
-
-function HeroBackdrop() {
-  if (HERO_IMAGE) {
-    return (
-      <img
-        src={HERO_IMAGE}
-        alt=""
-        aria-hidden
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-    );
-  }
-
-  // Light, warm base with a terracotta flood that visibly travels across
-  // the hero — diagonally top-left -> bottom-right and back, so it flows
-  // continuously ("waast") without a hard loop.
-  return (
-    <div aria-hidden className="absolute inset-0 overflow-hidden" style={{ backgroundColor: "#FAF7F5" }}>
-      {/* Faint constant diagonal tint so the corner never goes fully empty */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(135deg, ${TERRACOTTA}26 0%, ${TERRACOTTA}10 30%, transparent 60%)`,
-        }}
-      />
-      {/* Primary flood — large terracotta pool sweeping diagonally across */}
-      <motion.div
-        className="absolute w-[65vw] h-[65vw] rounded-full"
-        style={{
-          top: "-20%",
-          left: "-20%",
-          background: `radial-gradient(circle, ${TERRACOTTA}40 0%, ${TERRACOTTA}1a 45%, transparent 65%)`,
-          filter: "blur(70px)",
-        }}
-        animate={{ x: ["0vw", "55vw", "0vw"], y: ["0vh", "70vh", "0vh"] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-      />
-      {/* Trailing pool — offset phase for an organic, flowing feel */}
-      <motion.div
-        className="absolute w-[55vw] h-[55vw] rounded-full"
-        style={{
-          top: "-10%",
-          left: "0%",
-          background: `radial-gradient(circle, ${TERRACOTTA}2e 0%, transparent 60%)`,
-          filter: "blur(90px)",
-        }}
-        animate={{ x: ["10vw", "60vw", "10vw"], y: ["-5vh", "55vh", "-5vh"] }}
-        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
-      {/* Brand "growth lines" — ascending angular zigzags echoing the
-          logo's upward arrow, replacing the old square grid. */}
-      <GrowthLines />
-    </div>
-  );
-}
-
-// A field of ascending, angular zigzag lines (like the logo's growth
-// arrow). Deterministic so it renders identically on server and client.
-function GrowthLines() {
-  const W = 1440;
-  const H = 900;
-  const count = 9;
-  const stepX = 190; // spacing between zigzag vertices
-  const amp = 24; // zigzag peak height
-  const rise = 18; // overall upward trend per vertex
-  const vGap = 118; // vertical spacing between lines
-
-  const lines: string[] = [];
-  for (let k = 0; k < count; k++) {
-    const baseY = H + 120 - k * vGap;
-    const pts: string[] = [];
-    let i = 0;
-    for (let x = -160; x <= W + 160; x += stepX) {
-      const zig = i % 2 === 0 ? amp : -amp;
-      pts.push(`${x},${baseY - i * rise + zig}`);
-      i++;
-    }
-    lines.push(pts.join(" "));
-  }
-
-  return (
-    <svg
-      aria-hidden
-      className="absolute inset-0 w-full h-full"
-      viewBox={`0 0 ${W} ${H}`}
-      preserveAspectRatio="xMidYMid slice"
-      style={{
-        maskImage:
-          "radial-gradient(ellipse at center, black 35%, transparent 88%)",
-        WebkitMaskImage:
-          "radial-gradient(ellipse at center, black 35%, transparent 88%)",
-      }}
-    >
-      <motion.g
-        fill="none"
-        stroke={TERRACOTTA}
-        strokeWidth={2}
-        strokeLinejoin="miter"
-        animate={{ x: [-24, 48, -24], y: [20, -36, 20] }}
-        transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
-      >
-        {lines.map((p, i) => (
-          <polyline key={i} points={p} style={{ opacity: 0.08 + i * 0.012 }} />
-        ))}
-      </motion.g>
-    </svg>
-  );
-}
-
 function HeroContent() {
   const { language } = useLanguage();
   const isNL = language === "nl";
@@ -165,13 +49,9 @@ function HeroContent() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col overflow-hidden"
+      className="relative min-h-screen flex flex-col bg-background"
     >
-      {/* Full-bleed visual */}
-      <HeroBackdrop />
-
-      {/* Copy */}
-      <div className="relative z-10 flex-1 flex items-center">
+      <div className="flex-1 flex items-center">
         <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 pt-32 pb-16">
           {/* Eyebrow */}
           <motion.p
@@ -253,13 +133,13 @@ function HeroContent() {
         </div>
       </div>
 
-      {/* Spec row — hairline-separated stats */}
+      {/* Spec row — hairline-separated stats, Polestar style */}
       <motion.div
         custom={4}
         initial="hidden"
         animate="visible"
         variants={fadeUp}
-        className="relative z-10 w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 pb-16"
+        className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 pb-16"
       >
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 border-t border-foreground/15">
           {stats.map((stat, idx) => (
@@ -271,9 +151,13 @@ function HeroContent() {
                 <span className="text-3xl sm:text-4xl font-medium tracking-tight text-foreground">
                   {stat.value}
                 </span>
-                <span className="text-sm text-muted-foreground">{stat.unit}</span>
+                <span className="text-sm text-muted-foreground">
+                  {stat.unit}
+                </span>
               </div>
-              <p className="text-xs text-muted-foreground mt-2">{stat.label}</p>
+              <p className="text-xs text-muted-foreground mt-2">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>
@@ -284,13 +168,13 @@ function HeroContent() {
 
 function HeroLoading() {
   return (
-    <section className="relative min-h-screen flex items-center" style={{ backgroundColor: "#FAF7F5" }}>
+    <section className="relative min-h-screen flex items-center bg-background">
       <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         <div className="space-y-8">
-          <div className="h-4 w-48 bg-foreground/10 animate-pulse" />
-          <div className="h-24 w-full max-w-3xl bg-foreground/10 animate-pulse" />
-          <div className="h-6 w-96 max-w-full bg-foreground/5 animate-pulse" />
-          <div className="h-12 w-64 bg-foreground/5 animate-pulse" />
+          <div className="h-4 w-48 bg-muted animate-pulse" />
+          <div className="h-24 w-full max-w-3xl bg-muted animate-pulse" />
+          <div className="h-6 w-96 max-w-full bg-muted/60 animate-pulse" />
+          <div className="h-12 w-64 bg-muted/40 animate-pulse" />
         </div>
       </div>
     </section>

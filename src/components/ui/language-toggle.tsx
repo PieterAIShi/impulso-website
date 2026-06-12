@@ -11,17 +11,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function LanguageToggle({ light = false }: { light?: boolean }) {
+export function LanguageToggle() {
   const { language, t, switchLanguage } = useLanguage();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-          className={light ? "relative text-white hover:bg-white/10 hover:text-white" : "relative"}
-        >
+        <Button variant="ghost" size="icon" className="relative">
           <Globe className="h-5 w-5" />
           <span className="sr-only">{t.language.toggle}</span>
         </Button>
