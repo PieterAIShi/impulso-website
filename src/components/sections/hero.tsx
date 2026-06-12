@@ -30,37 +30,41 @@ function HeroBackdrop() {
     );
   }
 
-  // Light, warm base with a terracotta flood washing from the top-left
-  // corner diagonally toward the bottom-right; a second soft pool keeps
-  // the wash alive ("waast") with a slow drift.
+  // Light, warm base with a terracotta flood that visibly travels across
+  // the hero — diagonally top-left -> bottom-right and back, so it flows
+  // continuously ("waast") without a hard loop.
   return (
     <div aria-hidden className="absolute inset-0 overflow-hidden" style={{ backgroundColor: "#FAF7F5" }}>
-      {/* Diagonal terracotta wash, top-left -> bottom-right */}
+      {/* Faint constant diagonal tint so the corner never goes fully empty */}
       <div
         className="absolute inset-0"
         style={{
-          background: `linear-gradient(135deg, ${TERRACOTTA}40 0%, ${TERRACOTTA}1f 28%, ${TERRACOTTA}0a 50%, transparent 72%)`,
+          background: `linear-gradient(135deg, ${TERRACOTTA}26 0%, ${TERRACOTTA}10 30%, transparent 60%)`,
         }}
       />
-      {/* Soft pool at the origin (top-left), slowly drifting */}
+      {/* Primary flood — large terracotta pool sweeping diagonally across */}
       <motion.div
-        className="absolute -top-1/4 -left-1/4 w-[80vw] h-[80vw] rounded-full"
+        className="absolute w-[65vw] h-[65vw] rounded-full"
         style={{
-          background: `radial-gradient(circle, ${TERRACOTTA}33 0%, transparent 60%)`,
-          filter: "blur(80px)",
+          top: "-20%",
+          left: "-20%",
+          background: `radial-gradient(circle, ${TERRACOTTA}40 0%, ${TERRACOTTA}1a 45%, transparent 65%)`,
+          filter: "blur(70px)",
         }}
-        animate={{ x: [0, 40, 0], y: [0, 30, 0] }}
-        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ x: ["0vw", "55vw", "0vw"], y: ["0vh", "70vh", "0vh"] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
-      {/* Faint warm pool toward the bottom-right tail of the wash */}
+      {/* Trailing pool — offset phase for an organic, flowing feel */}
       <motion.div
-        className="absolute top-1/3 left-1/4 w-[70vw] h-[70vw] rounded-full"
+        className="absolute w-[55vw] h-[55vw] rounded-full"
         style={{
-          background: `radial-gradient(circle, ${TERRACOTTA}1f 0%, transparent 60%)`,
+          top: "-10%",
+          left: "0%",
+          background: `radial-gradient(circle, ${TERRACOTTA}2e 0%, transparent 60%)`,
           filter: "blur(90px)",
         }}
-        animate={{ x: [0, 50, 0], y: [0, 40, 0] }}
-        transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ x: ["10vw", "60vw", "10vw"], y: ["-5vh", "55vh", "-5vh"] }}
+        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
       {/* Fine grid, very subtle */}
       <div
