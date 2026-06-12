@@ -40,6 +40,7 @@ export default function About() {
     {
       name: "Omar Nassar",
       initials: "ON",
+      image: "/images/team/omar-nassar.png",
       role: isNL
         ? "AI-developer — jouw alleskunner"
         : "AI developer — your all-rounder",
@@ -133,11 +134,21 @@ export default function About() {
                 key={idx}
                 className="pt-8 sm:pr-12 sm:border-r sm:border-foreground/15 sm:last:border-r-0 sm:last:pl-12 sm:last:pr-0"
               >
-                {/* Portrait placeholder — swap for <Image> once photos exist */}
-                <div className="aspect-[4/5] max-w-[320px] bg-muted flex items-center justify-center mb-6">
-                  <span className="text-5xl font-medium tracking-tight text-muted-foreground/40">
-                    {owner.initials}
-                  </span>
+                {/* Portrait — photo if available, else initials placeholder */}
+                <div className="aspect-[4/5] max-w-[320px] bg-muted overflow-hidden mb-6">
+                  {owner.image ? (
+                    <img
+                      src={owner.image}
+                      alt={owner.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-5xl font-medium tracking-tight text-muted-foreground/40">
+                        {owner.initials}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-xl font-medium tracking-tight text-foreground">
                   {owner.name}
