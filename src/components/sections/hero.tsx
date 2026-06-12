@@ -110,11 +110,18 @@ function GrowthLines() {
           "radial-gradient(ellipse at center, black 35%, transparent 88%)",
       }}
     >
-      <g fill="none" stroke={TERRACOTTA} strokeWidth={2} strokeLinejoin="miter">
+      <motion.g
+        fill="none"
+        stroke={TERRACOTTA}
+        strokeWidth={2}
+        strokeLinejoin="miter"
+        animate={{ x: [-24, 48, -24], y: [20, -36, 20] }}
+        transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
+      >
         {lines.map((p, i) => (
           <polyline key={i} points={p} style={{ opacity: 0.08 + i * 0.012 }} />
         ))}
-      </g>
+      </motion.g>
     </svg>
   );
 }
