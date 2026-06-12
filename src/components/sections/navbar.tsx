@@ -134,9 +134,9 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
               className="flex items-center hover:opacity-70 transition-opacity"
             >
               <img
-                src="/impulso-logo.png"
+                src="/impulso-mark.png"
                 alt="Impulso Co."
-                className="h-11 sm:h-12 w-auto object-contain"
+                className="h-12 sm:h-14 w-auto object-contain"
               />
             </a>
           </div>
