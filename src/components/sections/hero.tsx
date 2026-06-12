@@ -223,14 +223,14 @@ function HeroContent() {
         <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20">
           <div
             ref={copyRef}
-            className="transition-opacity duration-700"
+            className="transition-opacity duration-700 text-center"
             style={{ opacity: 0 }}
           >
             <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground mb-6">
               {isNL ? "AI-bureau — Amsterdam" : "AI agency — Amsterdam"}
             </p>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight leading-[1.02] text-foreground max-w-4xl mb-8">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight leading-[1.02] text-foreground max-w-4xl mx-auto mb-8">
               {isNL ? (
                 <>
                   Wij bouwen jouw
@@ -246,7 +246,7 @@ function HeroContent() {
               )}
             </h1>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
               <a
                 href="#ready-to-start"
                 onClick={(e) => {
