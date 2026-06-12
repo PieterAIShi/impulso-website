@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { scrollToSection } from "@/lib/scroll-utils";
 
 export default function GuaranteeSection() {
     const { language } = useLanguage();
@@ -23,7 +24,7 @@ export default function GuaranteeSection() {
         <section className="py-24 sm:py-32 bg-background border-t border-foreground/10" id="guarantee">
             <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-                    {/* Left: statement */}
+                    {/* Left: main value proposition + CTAs (moved from the hero) */}
                     <div>
                         <motion.p
                             className="text-xs sm:text-sm text-muted-foreground uppercase tracking-[0.2em] mb-8"
@@ -31,28 +32,52 @@ export default function GuaranteeSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            {language === 'nl' ? 'Onze belofte' : 'Our promise'}
+                            {language === 'nl' ? 'AI-bureau — Amsterdam' : 'AI agency — Amsterdam'}
                         </motion.p>
 
                         <motion.h2
-                            className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.05] text-foreground mb-6"
+                            className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.05] text-foreground mb-10"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.05 }}
                         >
-                            {language === 'nl' ? 'Jouw tevredenheid, gegarandeerd' : 'Your satisfaction, guaranteed'}
+                            {language === 'nl' ? (
+                                <>Wij bouwen jouw<br />digitale team.</>
+                            ) : (
+                                <>We build your<br />digital team.</>
+                            )}
                         </motion.h2>
 
-                        <motion.p
-                            className="text-lg sm:text-xl text-muted-foreground font-light leading-relaxed max-w-md"
+                        <motion.div
+                            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
                         >
-                            {language === 'nl' ? 'Wij nemen het risico, niet jij.' : 'We take the risk. Not you.'}
-                        </motion.p>
+                            <a
+                                href="#ready-to-start"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    scrollToSection("ready-to-start");
+                                }}
+                                className="inline-flex items-center justify-center h-12 px-10 border border-foreground/40 text-sm font-medium text-foreground hover:border-foreground transition-colors duration-200"
+                            >
+                                {language === 'nl' ? 'Plan gratis intake' : 'Book free intake'}
+                            </a>
+                            <a
+                                href="#services"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    scrollToSection("services");
+                                }}
+                                className="group inline-flex items-center gap-2 text-sm font-medium text-foreground"
+                            >
+                                {language === 'nl' ? 'Bekijk agents' : 'View agents'}
+                                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                            </a>
+                        </motion.div>
                     </div>
 
                     {/* Right: guarantees — hairline-separated list */}

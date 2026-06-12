@@ -1,15 +1,13 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
-import { scrollToSection } from "@/lib/scroll-utils";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 /**
  * Hero: a particle-flow canvas (ported from particle_flow_impulso_v9).
- * Particles float, converge into "Impulso Co." + tagline, hold while the
- * bottom-left copy fades in, then scatter and loop. The canvas is purely
- * decorative — the real copy lives in the DOM overlay for a11y/SEO.
+ * Particles float, converge into "Impulso Co." + tagline, hold, then
+ * scatter and loop. The value-proposition copy + CTAs live in the
+ * guarantee section below; the hero is purely the animation.
  */
 function HeroContent() {
   const { language } = useLanguage();
@@ -17,7 +15,6 @@ function HeroContent() {
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
-  const copyRef = useRef<HTMLDivElement>(null);
 
   const tagline = isNL
     ? "Wij creëren structuur in chaos."
@@ -26,7 +23,6 @@ function HeroContent() {
   useEffect(() => {
     const canvas = canvasRef.current;
     const wrap = wrapRef.current;
-    const copy = copyRef.current;
     if (!canvas || !wrap) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -121,7 +117,6 @@ function HeroContent() {
     function nextPhase() {
       phase = (phase + 1) % 4;
       phaseT = 0;
-      if (copy) copy.style.opacity = phase === 2 ? "1" : "0";
     }
 
     function tick() {
@@ -216,61 +211,6 @@ function HeroContent() {
       {/* Particle-flow canvas */}
       <div ref={wrapRef} className="absolute inset-0">
         <canvas ref={canvasRef} className="block w-full h-full" />
-      </div>
-
-      {/* Copy — fades in while the particles hold their form */}
-      <div className="absolute inset-x-0 bottom-0 z-10">
-        <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20">
-          <div
-            ref={copyRef}
-            className="transition-opacity duration-700 text-center"
-            style={{ opacity: 0 }}
-          >
-            <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground mb-6">
-              {isNL ? "AI-bureau — Amsterdam" : "AI agency — Amsterdam"}
-            </p>
-
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight leading-[1.02] text-foreground max-w-4xl mx-auto mb-8">
-              {isNL ? (
-                <>
-                  Wij bouwen jouw
-                  <br />
-                  digitale team.
-                </>
-              ) : (
-                <>
-                  We build your
-                  <br />
-                  digital team.
-                </>
-              )}
-            </h1>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
-              <a
-                href="#ready-to-start"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("ready-to-start");
-                }}
-                className="inline-flex items-center justify-center h-12 px-10 border border-foreground/40 text-sm font-medium text-foreground hover:border-foreground transition-colors duration-200"
-              >
-                {isNL ? "Plan gratis intake" : "Book free intake"}
-              </a>
-              <a
-                href="#services"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("services");
-                }}
-                className="group inline-flex items-center gap-2 text-sm font-medium text-foreground"
-              >
-                {isNL ? "Bekijk agents" : "View agents"}
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
