@@ -7,6 +7,7 @@ import WhyVirelio from "@/components/sections/why-virelio";
 import About from "@/components/sections/about";
 import Certifications from "@/components/sections/certifications";
 import Services from "@/components/sections/services";
+import Pricing from "@/components/sections/pricing";
 import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/sections/footer";
 import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
@@ -110,6 +111,7 @@ export default function Home() {
         <div id={siteConfig.sections.services.substring(1)}>
           <Services />
         </div>
+        <Pricing />
         <CaseStudies />
         <WhyVirelio />
         <About />
