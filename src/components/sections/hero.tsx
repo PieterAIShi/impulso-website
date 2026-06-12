@@ -32,12 +32,15 @@ function HeroContent() {
     let particles: {
       x: number; y: number; vx: number; vy: number;
       size: number; alpha: number; tx: number; ty: number;
+      cr: number; cg: number; cb: number;
     }[] | null = null;
     let targets: { x: number; y: number }[] = [];
     const mouse = { x: -9999, y: -9999 };
 
     const BG = "#ffffff";
-    const DOT = "rgba(0,0,0,";
+    // Terracotta — particles blend between black and this; they resolve
+    // to pure black while the brand name is formed (held).
+    const TR = [180, 68, 42];
 
     const FLOAT_DUR = 180, FORM_DUR = 70, HOLD_DUR = 220, SCATTER_DUR = 60;
     let phase = 0, phaseT = 0, frame = 0;
@@ -91,6 +94,8 @@ function HeroContent() {
       const shuffled = [...targets].sort(() => Math.random() - 0.5);
       for (let i = 0; i < COUNT; i++) {
         const t = shuffled[i];
+        // Blend factor toward terracotta (biased to keep it subtle/light).
+        const m = Math.random() ** 1.6;
         particles.push({
           x: Math.random() * W, y: Math.random() * H,
           vx: (Math.random() - 0.5) * 1.4,
@@ -98,6 +103,9 @@ function HeroContent() {
           size: 1.0,
           alpha: Math.random() * 0.3 + 0.08,
           tx: t.x, ty: t.y,
+          cr: Math.round(TR[0] * m),
+          cg: Math.round(TR[1] * m),
+          cb: Math.round(TR[2] * m),
         });
       }
     }
@@ -166,9 +174,21 @@ function HeroContent() {
         else if (phase === 2) alpha = 1.0;
         else alpha = 1 - esp;
 
+        // How black the dot is: 0 = its blended colour, 1 = pure black.
+        // Floating keeps the blend; forming fades to black; held = black;
+        // scattering returns to the blend.
+        let toBlack;
+        if (phase === 1) toBlack = efp;
+        else if (phase === 2) toBlack = 1;
+        else if (phase === 3) toBlack = 1 - esp;
+        else toBlack = 0;
+        const r = Math.round(p.cr * (1 - toBlack));
+        const g = Math.round(p.cg * (1 - toBlack));
+        const b = Math.round(p.cb * (1 - toBlack));
+
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = DOT + Math.max(0, Math.min(1, alpha)).toFixed(2) + ")";
+        ctx.fillStyle = `rgba(${r},${g},${b},${Math.max(0, Math.min(1, alpha)).toFixed(2)})`;
         ctx.fill();
       }
 
