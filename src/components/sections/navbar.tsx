@@ -15,13 +15,20 @@ interface NavLink {
 
 interface NavbarProps {
   customNavLinks?: NavLink[];
+  /** Set on pages with a dark full-bleed hero so the bar shows light
+   *  content while at the top (before it gets a solid background). */
+  overHero?: boolean;
 }
 
-export default function Navbar({ customNavLinks }: NavbarProps = {}) {
+export default function Navbar({ customNavLinks, overHero = false }: NavbarProps = {}) {
   const { t, language } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+
+  // Light content over the dark hero only while at the very top and the
+  // mobile menu is closed; otherwise the bar sits on a solid light surface.
+  const lightTop = overHero && !isScrolled && !mobileMenuOpen;
 
   const defaultNavLinks = [
     { name: t.nav.services, href: "#services" },
@@ -133,7 +140,10 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
               onClick={(e) => handleNavClick(e, "#")}
               className="flex items-center hover:opacity-70 transition-opacity"
             >
-              <span className="text-lg sm:text-xl font-medium tracking-tight text-foreground">
+              <span className={cn(
+                "text-lg sm:text-xl font-medium tracking-tight transition-colors duration-200",
+                lightTop ? "text-white" : "text-foreground"
+              )}>
                 Impulso Co.
               </span>
             </a>
@@ -152,9 +162,9 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                       href={link.href}
                       className={cn(
                         "text-sm font-normal tracking-normal whitespace-nowrap transition-colors duration-200",
-                        isActive
-                          ? "text-foreground"
-                          : "text-foreground/60 hover:text-foreground"
+                        lightTop
+                          ? (isActive ? "text-white" : "text-white/70 hover:text-white")
+                          : (isActive ? "text-foreground" : "text-foreground/60 hover:text-foreground")
                       )}
                       onClick={(e) => handleNavClick(e, link.href)}
                     >
@@ -169,11 +179,16 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                 href="https://calendly.com/omarnassar1127/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center h-9 px-5 border border-foreground/40 text-sm font-medium text-foreground hover:border-foreground transition-colors duration-200"
+                className={cn(
+                  "inline-flex items-center justify-center h-9 px-5 border text-sm font-medium transition-colors duration-200",
+                  lightTop
+                    ? "border-white/50 text-white hover:bg-white hover:text-neutral-950"
+                    : "border-foreground/40 text-foreground hover:border-foreground"
+                )}
               >
                 {language === 'nl' ? 'Plan intake' : 'Book intake'}
               </a>
-              <LanguageToggle />
+              <LanguageToggle light={lightTop} />
             </div>
           </nav>
 
@@ -182,7 +197,10 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
             <LanguageToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="relative w-10 h-10 flex items-center justify-center hover:bg-foreground/5 transition-colors"
+              className={cn(
+                "relative w-10 h-10 flex items-center justify-center transition-colors",
+                lightTop ? "text-white hover:bg-white/10" : "text-foreground hover:bg-foreground/5"
+              )}
               aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait">
