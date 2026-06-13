@@ -10,14 +10,14 @@ export default function GuaranteeSection() {
 
     const guarantees = [
         language === 'nl'
-            ? 'Geld terug als je niet tevreden bent — geen vragen, geen gedoe'
-            : 'Money back if you\'re not satisfied — no questions asked',
+            ? 'Geen verborgen kosten, we houden van transparantie'
+            : 'No hidden costs — we love transparency',
         language === 'nl'
-            ? 'Binnen 4 uur persoonlijke reactie van ons team'
-            : 'Personal response from our team within 4 hours',
+            ? 'Dezelfde dag nog een reactie'
+            : 'A response the same day',
         language === 'nl'
-            ? 'Past het niet perfect? Gratis aanpassingen tot het klopt'
-            : 'Not perfect? Free revisions until it is'
+            ? '(Nog) niet tevreden? We denken altijd met je mee'
+            : 'Not satisfied (yet)? We always think along with you'
     ];
 
     return (
