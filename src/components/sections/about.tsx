@@ -51,6 +51,7 @@ export default function About() {
     {
       name: "Pieter de Haer",
       initials: "PdH",
+      image: "/images/team/pieter-de-haer.jpeg",
       role: isNL
         ? "Sales & klantrelaties — jouw aanspreekpunt"
         : "Sales & customer relations — your point of contact",
