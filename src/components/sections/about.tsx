@@ -45,8 +45,8 @@ export default function About() {
         ? "AI-developer — jouw alleskunner"
         : "AI developer — your all-rounder",
       bio: isNL
-        ? "Bouwt de AI-oplossingen. Van prototype tot stabiel productiesysteem — nieuw idee vandaag, werkende demo dezelfde dag."
-        : "Builds the AI solutions. From prototype to stable production system — new idea today, working demo the same day.",
+        ? "Bouwt de AI-oplossingen. Van prototype tot stabiel productiesysteem — nieuw idee vandaag, werkende demo binnen 2 dagen."
+        : "Builds the AI solutions. From prototype to stable production system — new idea today, working demo within 2 days.",
     },
     {
       name: "Pieter de Haer",
