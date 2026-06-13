@@ -572,7 +572,7 @@ function CaseStudyCard({
                 href={study.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group ml-auto inline-flex items-center gap-1.5 text-sm font-medium text-foreground"
+                className="group ml-auto inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-terracotta"
               >
                 {isNL ? "Bekijk live" : "View live"}
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -681,7 +681,7 @@ export default function CaseStudies() {
               : "Want results like these?"}
           </p>
           <button
-            className="sm:ml-auto inline-flex items-center justify-center h-12 px-10 border border-foreground/40 text-sm font-medium text-foreground hover:border-foreground transition-colors duration-200"
+            className="sm:ml-auto inline-flex items-center justify-center h-12 px-10 border border-foreground/40 text-sm font-medium text-foreground hover:border-terracotta hover:text-terracotta transition-colors duration-200"
             onClick={() => scrollToSection("ready-to-start")}
           >
             {isNL ? "Plan gratis intake" : "Book free intake"}

@@ -114,7 +114,7 @@ export default function About() {
                 e.preventDefault();
                 scrollToSection("ready-to-start");
               }}
-              className="group inline-flex items-center gap-2 text-sm font-medium text-foreground"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-terracotta"
             >
               {isNL ? "Plan een kennismaking" : "Book an introduction"}
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />

@@ -1109,7 +1109,7 @@ function CategoryDetail({
                 transition={{ delay: 0.3 }}
               >
                 <button
-                  className="group w-full flex items-center justify-center gap-2 h-12 bg-foreground text-background text-sm font-medium hover:bg-foreground/85 transition-colors"
+                  className="group w-full flex items-center justify-center gap-2 h-12 bg-foreground text-background text-sm font-medium hover:bg-terracotta transition-colors"
                   onClick={() => {
                     onClose();
                     scrollToSection("ready-to-start");
@@ -1222,7 +1222,7 @@ const Services = () => {
             </p>
           </div>
           <button
-            className="group inline-flex items-center justify-center gap-2 h-12 px-10 bg-foreground text-background text-sm font-medium hover:bg-foreground/85 transition-colors shrink-0"
+            className="group inline-flex items-center justify-center gap-2 h-12 px-10 bg-foreground text-background text-sm font-medium hover:bg-terracotta transition-colors shrink-0"
             onClick={() => scrollToSection("ready-to-start")}
           >
             {isNL ? "Bespreek jouw custom agent" : "Discuss your custom agent"}

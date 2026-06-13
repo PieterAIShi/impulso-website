@@ -171,8 +171,8 @@ export default function Pricing() {
                 onClick={() => scrollToSection("ready-to-start")}
                 className={
                   plan.popular
-                    ? "group inline-flex items-center justify-center gap-2 h-12 px-6 bg-foreground text-background text-sm font-medium hover:bg-foreground/85 transition-colors"
-                    : "group inline-flex items-center justify-center gap-2 h-12 px-6 border border-foreground/40 text-sm font-medium text-foreground hover:border-foreground transition-colors"
+                    ? "group inline-flex items-center justify-center gap-2 h-12 px-6 bg-foreground text-background text-sm font-medium hover:bg-terracotta transition-colors"
+                    : "group inline-flex items-center justify-center gap-2 h-12 px-6 border border-foreground/40 text-sm font-medium text-foreground hover:border-terracotta hover:text-terracotta transition-colors"
                 }
               >
                 {isNL ? "Plan gratis intake" : "Book free intake"}

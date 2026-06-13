@@ -210,14 +210,14 @@ export default function Testimonials() {
             <button
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
-              className="w-11 h-11 border border-foreground/30 flex items-center justify-center hover:border-foreground transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+              className="w-11 h-11 border border-foreground/30 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
             >
               <ChevronLeft className="w-4 h-4" strokeWidth={1.5} />
             </button>
             <button
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
-              className="w-11 h-11 border border-foreground/30 flex items-center justify-center hover:border-foreground transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+              className="w-11 h-11 border border-foreground/30 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
             >
               <ChevronRight className="w-4 h-4" strokeWidth={1.5} />
             </button>
@@ -261,14 +261,14 @@ export default function Testimonials() {
           <button
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
-            className="w-10 h-10 border border-foreground/30 flex items-center justify-center hover:border-foreground transition-colors disabled:opacity-20"
+            className="w-10 h-10 border border-foreground/30 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors disabled:opacity-20"
           >
             <ChevronLeft className="w-4 h-4" strokeWidth={1.5} />
           </button>
           <button
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
-            className="w-10 h-10 border border-foreground/30 flex items-center justify-center hover:border-foreground transition-colors disabled:opacity-20"
+            className="w-10 h-10 border border-foreground/30 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors disabled:opacity-20"
           >
             <ChevronRight className="w-4 h-4" strokeWidth={1.5} />
           </button>

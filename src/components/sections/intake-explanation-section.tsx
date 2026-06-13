@@ -131,7 +131,7 @@ export default function IntakeExplanationSection() {
                             href="https://calendly.com/omarnassar1127/30min"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group inline-flex items-center justify-center gap-2 h-12 px-10 bg-foreground text-background text-sm font-medium hover:bg-foreground/85 transition-colors"
+                            className="group inline-flex items-center justify-center gap-2 h-12 px-10 bg-foreground text-background text-sm font-medium hover:bg-terracotta transition-colors"
                         >
                             {language === 'nl' ? 'Plan een gesprek' : 'Schedule a call'}
                             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />

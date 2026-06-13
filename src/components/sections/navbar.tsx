@@ -156,8 +156,8 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                       className={cn(
                         "text-sm font-normal tracking-normal whitespace-nowrap transition-colors duration-200",
                         isActive
-                          ? "text-foreground"
-                          : "text-foreground/60 hover:text-foreground"
+                          ? "text-terracotta"
+                          : "text-foreground/60 hover:text-terracotta"
                       )}
                       onClick={(e) => handleNavClick(e, link.href)}
                     >
@@ -172,7 +172,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                 href="https://calendly.com/omarnassar1127/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center h-9 px-5 border border-foreground/40 text-sm font-medium text-foreground hover:border-foreground transition-colors duration-200"
+                className="inline-flex items-center justify-center h-9 px-5 border border-foreground/40 text-sm font-medium text-foreground hover:border-terracotta hover:text-terracotta transition-colors duration-200"
               >
                 {language === 'nl' ? 'Plan intake' : 'Book intake'}
               </a>
@@ -250,8 +250,8 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                           className={cn(
                             "block py-4 text-3xl font-medium tracking-tight transition-colors",
                             isActive
-                              ? "text-foreground"
-                              : "text-foreground/50 active:text-foreground"
+                              ? "text-terracotta"
+                              : "text-foreground/50 active:text-terracotta"
                           )}
                         >
                           {link.name}

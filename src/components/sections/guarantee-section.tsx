@@ -62,7 +62,7 @@ export default function GuaranteeSection() {
                                     e.preventDefault();
                                     scrollToSection("ready-to-start");
                                 }}
-                                className="inline-flex items-center justify-center h-12 px-10 border border-foreground/40 text-sm font-medium text-foreground hover:border-foreground transition-colors duration-200"
+                                className="inline-flex items-center justify-center h-12 px-10 border border-foreground/40 text-sm font-medium text-foreground hover:border-terracotta hover:text-terracotta transition-colors duration-200"
                             >
                                 {language === 'nl' ? 'Plan gratis intake' : 'Book free intake'}
                             </a>
@@ -72,7 +72,7 @@ export default function GuaranteeSection() {
                                     e.preventDefault();
                                     scrollToSection("services");
                                 }}
-                                className="group inline-flex items-center gap-2 text-sm font-medium text-foreground"
+                                className="group inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-terracotta"
                             >
                                 {language === 'nl' ? 'Bekijk agents' : 'View agents'}
                                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
