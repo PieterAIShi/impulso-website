@@ -7,7 +7,7 @@ import { scrollToSection } from "@/lib/scroll-utils";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 /**
- * Polestar-style "Over ons" section: type-led company story
+ * Minimalist "Over ons" section: type-led company story
  * followed by a hairline-separated owners grid.
  *
  * TODO: add portraits to /public/images/team/ and swap the

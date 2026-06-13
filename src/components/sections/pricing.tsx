@@ -8,7 +8,7 @@ import { scrollToSection } from "@/lib/scroll-utils";
 
 /**
  * Pricing — a first proposal ("voorzet"). Three tiers in a hairline grid,
- * Polestar style. Prices are placeholders to be replaced with real ones.
+ * minimalist style. Prices are placeholders to be replaced with real ones.
  */
 export default function Pricing() {
   const { language } = useLanguage();

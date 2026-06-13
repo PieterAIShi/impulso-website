@@ -13,7 +13,7 @@ export interface ButtonProps
 }
 
 /**
- * Polestar-style button: square corners, no shadows, no scale effects.
+ * Minimalist button: square corners, no shadows, no scale effects.
  * Solid fills or thin 1px borders; quiet hover states only.
  */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
