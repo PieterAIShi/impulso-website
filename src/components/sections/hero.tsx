@@ -34,7 +34,7 @@ function HeroContent() {
       size: number; alpha: number; tx: number; ty: number;
       cr: number; cg: number; cb: number;
     }[] | null = null;
-    let targets: { x: number; y: number }[] = [];
+    let targets: { x: number; y: number; small: boolean }[] = [];
     const mouse = { x: -9999, y: -9999 };
 
     const BG = "#ffffff";
@@ -65,15 +65,22 @@ function HeroContent() {
 
       const fs2 = Math.min(W / 18, 26);
       const y2 = y1 + fs1 * 0.25 + fs2 * 1.6;
-      oc.font = `500 ${fs2}px sans-serif`;
+      // Lighter weight for the tagline so it stays crisp, not bold.
+      oc.font = `400 ${fs2}px sans-serif`;
       oc.fillText(tagline, W / 2, y2);
 
+      // Everything below this line belongs to the (small) tagline.
+      const smallThreshold = y1 + fs1 * 0.2;
+
       const imgData = oc.getImageData(0, 0, W, H).data;
-      // Sample density scales down on smaller screens to keep it smooth.
-      const step = W < 700 ? 2 : 1;
-      for (let y = 0; y < H; y += step) {
+      // Sample the small tagline at full density (even on mobile) so its
+      // thin strokes read sharply; the name can use a coarser step.
+      for (let y = 0; y < H; y++) {
+        const isSmall = y > smallThreshold;
+        const step = isSmall ? 1 : (W < 700 ? 2 : 1);
+        if (step === 2 && y % 2 !== 0) continue; // coarse rows for the name on mobile
         for (let x = 0; x < W; x += step) {
-          if (imgData[(y * W + x) * 4 + 3] > 60) targets.push({ x, y });
+          if (imgData[(y * W + x) * 4 + 3] > 60) targets.push({ x, y, small: isSmall });
         }
       }
     }
@@ -83,7 +90,7 @@ function HeroContent() {
       const shuffled = [...targets].sort(() => Math.random() - 0.5);
       particles.forEach((p, i) => {
         const t = shuffled[i % shuffled.length];
-        if (t) { p.tx = t.x; p.ty = t.y; }
+        if (t) { p.tx = t.x; p.ty = t.y; p.size = t.small ? 0.8 : 1.3; }
       });
     }
 
@@ -105,7 +112,8 @@ function HeroContent() {
           y: (Math.random() * 1.1 - 0.05) * H,
           vx: (Math.random() - 0.5) * 1.4,
           vy: (Math.random() - 0.5) * 1.4,
-          size: 1.3,
+          // Smaller dots for the tagline so its thin glyphs stay crisp.
+          size: t.small ? 0.8 : 1.3,
           alpha: Math.random() * 0.3 + 0.08,
           tx: t.x, ty: t.y,
           cr: Math.round(TR[0] * m),
