@@ -88,7 +88,7 @@ export default function GuaranteeSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            {language === 'nl' ? 'Onze belofte' : 'Our promise'}
+                            {language === 'nl' ? 'Onze beloftes' : 'Our promises'}
                         </motion.p>
                         <div className="border-t border-foreground/15">
                         {guarantees.map((guarantee, index) => (
