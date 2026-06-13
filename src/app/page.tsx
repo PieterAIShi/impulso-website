@@ -13,7 +13,6 @@ import Footer from "@/components/sections/footer";
 import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
 import IntakeExplanationSection from "@/components/sections/intake-explanation-section";
 import GuaranteeSection from "@/components/sections/guarantee-section";
-import TeamNetwork from "@/components/sections/team-network";
 import { generateMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
@@ -109,7 +108,6 @@ export default function Home() {
         <Hero />
         <CompanySlider />
         <GuaranteeSection />
-        <TeamNetwork />
         <div id={siteConfig.sections.services.substring(1)}>
           <Services />
         </div>
