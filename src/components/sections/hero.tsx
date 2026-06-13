@@ -42,7 +42,7 @@ function HeroContent() {
     // to pure black while the brand name is formed (held).
     const TR = [180, 68, 42];
 
-    const FLOAT_DUR = 180, FORM_DUR = 70, HOLD_DUR = 220, SCATTER_DUR = 60;
+    const FLOAT_DUR = 180, FORM_DUR = 95, HOLD_DUR = 220, SCATTER_DUR = 60;
     let phase = 0, phaseT = 0, frame = 0;
     let rafId = 0;
 
@@ -88,7 +88,9 @@ function HeroContent() {
     }
 
     function initParticles() {
-      const cap = W < 700 ? 12000 : 30000;
+      // Higher caps so there are enough dots to cover the glyphs densely
+      // (clearer letters); the text is sampled below at full density.
+      const cap = W < 700 ? 18000 : 46000;
       const COUNT = Math.min(targets.length, cap);
       particles = [];
       const shuffled = [...targets].sort(() => Math.random() - 0.5);
@@ -97,10 +99,13 @@ function HeroContent() {
         // Blend factor toward terracotta (biased to keep it subtle/light).
         const m = Math.random() ** 1.6;
         particles.push({
-          x: Math.random() * W, y: Math.random() * H,
+          // Start spread across the whole screen (with slight overscan so
+          // dots also stream in from beyond the edges).
+          x: (Math.random() * 1.1 - 0.05) * W,
+          y: (Math.random() * 1.1 - 0.05) * H,
           vx: (Math.random() - 0.5) * 1.4,
           vy: (Math.random() - 0.5) * 1.4,
-          size: 1.0,
+          size: 1.3,
           alpha: Math.random() * 0.3 + 0.08,
           tx: t.x, ty: t.y,
           cr: Math.round(TR[0] * m),
@@ -211,7 +216,7 @@ function HeroContent() {
     tick();
 
     // Auto-start the formation shortly after load (the hero is in view).
-    const startTimer = setTimeout(onScroll, 600);
+    const startTimer = setTimeout(onScroll, 1200);
 
     return () => {
       cancelAnimationFrame(rafId);
